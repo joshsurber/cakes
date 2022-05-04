@@ -1,0 +1,94 @@
+---
+// vim: fdm=marker fmr={,}
+---
+
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
+:root {
+  --white: hsl(350, 100%, 96%);
+  --black: black;
+  --gray: rgb(128, 128, 128);
+  --pop: hsl(350, 100%, 78%);
+  --poplight: hsl(350, 100%, 88%);
+  --popdark: hsl(350, 100%, 68%);
+
+  --bg: var(--white);
+  --fg: var(--black);
+
+  --fancy: 6rem "Ole", cursive;
+  --neon: "Comfortaa", cursive;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  color: var(--fg);
+  background-color: var(--bg);
+}
+header {
+  font-weight: normal;
+}
+h1 {
+  font: var(--fancy);
+  margin: 0em auto;
+  text-align: center;
+}
+nav {
+  ul {
+    display: flex;
+    padding: 1rem 0;
+  }
+  li {
+    display: block;
+    flex: 1;
+  }
+  a {
+    display: inline-block;
+    margin-inline: 1em;
+    padding: 1em 2em;
+    font-family: var(--neon);
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--white);
+    background-size: 200%;
+    background-image: linear-gradient(
+      to top left,
+      var(--poplight),
+      var(--popdark),
+      var(--poplight)
+    );
+    background-position: 0;
+    // text-shadow: 1px 1px 1px var(--poplight);
+    text-decoration: none;
+    border: 2px solid var(--pop);
+    border-radius: 1em;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      background-image: linear-gradient(
+        to top left,
+        var(--popdark),
+        var(--poplight),
+        var(--popdark)
+      );
+      background-position: 100%;
+      background-color: var(--pop);
+      color: var(--black);
+    }
+  }
+}
+main {
+}
+aside {
+}
+footer {
+}
+a {
+  color: var(--pop);
+}
+img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 30vh;
+  border: 1px solid var(--fg);
+}

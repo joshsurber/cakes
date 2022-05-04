@@ -1,0 +1,6 @@
+![](images/wedding/IMG_0324.jpg)
+![](images/wedding/IMG_0325.jpg)
+![](images/wedding/IMG_0647.JPG)
+![](images/wedding/IMG_0648.JPG)
+![](images/wedding/IMG_3353.jpg)
+![](images/wedding/IMG_4133.jpg)
