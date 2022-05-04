@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>{{ page.title }}</title>
+    <title>
+    {%if page.title%} {{page.title}} {%else%} Cakes by Tina {%endif%}
+    </title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>

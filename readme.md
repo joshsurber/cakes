@@ -1,5 +1,3 @@
-# Check this shit out!
-
 ![](images/IMG_0781.jpg)
 ![](images/IMG_3691.jpg)
 ![](images/IMG_3697.jpg)
