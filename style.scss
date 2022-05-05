@@ -2,39 +2,45 @@
 // vim: fdm=marker fmr={,}
 ---
 
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
 :root {
-  --white: hsl(350, 100%, 96%);
-  --black: black;
-  --gray: rgb(128, 128, 128);
-  --pop: hsl(350, 100%, 78%);
-  --poplight: hsl(350, 100%, 88%);
-  --popdark: hsl(350, 100%, 68%);
+  --color-white: hsl(350, 100%, 96%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-gray: hsl(0, 0%, 51%);
+  --color-pop: hsl(350, 100%, 78%);
+  --color-pop-light: hsl(350, 100%, 88%);
+  --color-pop-dark: hsl(350, 100%, 68%);
 
-  --bg: var(--white);
-  --fg: var(--black);
+  --color-background: var(--color-white);
+  --color-text: var(--color-black);
 
-  --fancy: 6rem "Ole", cursive;
-  --neon: "Comfortaa", cursive;
+  --font-fancy: "Ole", cursive;
+  --font-button: "Comfortaa", cursive;
 }
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap"); //{
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
+} //}
 body {
-  color: var(--fg);
-  background-color: var(--bg);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.5;
 }
 header {
-  font-weight: normal;
-}
-h1 {
-  font: var(--fancy);
-  margin: 0em auto;
-  text-align: center;
+  h1 {
+    margin: 0em auto 2rem;
+    text-align: center;
+    a {
+      font-weight: normal;
+      font: 6rem var(--font-fancy);
+      color: var(--color-black);
+      text-decoration: none;
+    }
+  }
 }
 nav {
+  display: none;
   ul {
     display: flex;
     padding: 1rem 0;
@@ -47,33 +53,33 @@ nav {
     display: inline-block;
     margin-inline: 1em;
     padding: 1em 2em;
-    font-family: var(--neon);
+    font-family: var(--font-button);
     font-size: 1.2em;
     font-weight: 600;
-    color: var(--white);
+    color: var(--color-white);
     background-size: 200%;
     background-image: linear-gradient(
       to top left,
-      var(--poplight),
-      var(--popdark),
-      var(--poplight)
+      var(--color-pop-light),
+      var(--color-pop-dark),
+      var(--color-pop-light)
     );
     background-position: 0;
     // text-shadow: 1px 1px 1px var(--poplight);
     text-decoration: none;
-    border: 2px solid var(--pop);
+    border: 2px solid var(--color-pop);
     border-radius: 1em;
     transition: all 200ms ease-in-out;
     &:hover {
       background-image: linear-gradient(
         to top left,
-        var(--popdark),
-        var(--poplight),
-        var(--popdark)
+        var(--color-pop-dark),
+        var(--color-pop-light),
+        var(--color-pop-dark)
       );
       background-position: 100%;
-      background-color: var(--pop);
-      color: var(--black);
+      background-color: var(--color-pop);
+      color: var(--color-black);
     }
   }
 }
@@ -83,14 +89,42 @@ aside {
 }
 footer {
 }
+section {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: center;
+  padding-inline: 1em;
+  h2 {
+    font: 4rem var(--font-fancy);
+    margin: 0;
+  }
+  img {
+    max-height: 15em;
+  }
+  div {
+    max-width: 75ch;
+  }
+  & + & {
+    margin-top: 3em;
+  }
+}
+section:nth-of-type(2n) {
+  flex-direction: row-reverse;
+  h2 {
+    text-align: right;
+  }
+  img {
+  }
+}
 a {
-  color: var(--pop);
+  color: var(--color-pop);
 }
 img {
   display: inline-block;
   max-width: 100%;
   max-height: 30vh;
-  border: 1px solid var(--fg);
+  border: 1px solid var(--color-text);
 }
 strong em {
   display: none;
