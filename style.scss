@@ -92,3 +92,9 @@ img {
   max-height: 30vh;
   border: 1px solid var(--fg);
 }
+strong em {
+  display: none;
+}
+strong:hover em {
+  display: block;
+}
