@@ -16,18 +16,24 @@
   --font-fancy: "Ole", cursive;
   --font-button: "Comfortaa", cursive;
 }
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap"); //{
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-} //}
+}
+* + * {
+  margin-top: 1em;
+}
 body {
   color: var(--color-text);
   background-color: var(--color-background);
   line-height: 1.5;
 }
 header {
+  grid-area: header;
   h1 {
     margin: 0em auto 2rem;
     text-align: center;
@@ -40,6 +46,7 @@ header {
   }
 }
 nav {
+  grid-area: nav;
   display: none;
   ul {
     display: flex;
@@ -84,38 +91,13 @@ nav {
   }
 }
 main {
+  grid-area: main;
 }
 aside {
+  grid-area: sidebar;
 }
 footer {
-}
-section {
-  display: flex;
-  flex-direction: row;
-  gap: 2em;
-  align-items: center;
-  padding-inline: 1em;
-  h2 {
-    font: 4rem var(--font-fancy);
-    margin: 0;
-  }
-  img {
-    max-height: 15em;
-  }
-  div {
-    max-width: 75ch;
-  }
-  & + & {
-    margin-top: 3em;
-  }
-}
-section:nth-of-type(2n) {
-  flex-direction: row-reverse;
-  h2 {
-    text-align: right;
-  }
-  img {
-  }
+  grid-area: footer;
 }
 a {
   color: var(--color-pop);
@@ -131,4 +113,46 @@ strong em {
 }
 strong:hover em {
   display: block;
+}
+section {
+  clear: both;
+  max-width: 75ch;
+  margin-inline: 1em;
+  position: relative;
+  h2 {
+    text-align: center;
+    font: 3rem var(--font-fancy);
+  }
+  img {
+    float: left;
+    margin: 1em;
+  }
+  &:nth-of-type(2n) {
+    img {
+      float: right;
+    }
+  }
+}
+@media (min-width: 40em) and (max-width: 90rem) {
+  section {
+    margin-inline: 1em;
+    &:nth-of-type(2n) {
+      margin-inline: auto 1em;
+    }
+    h2 {
+      display: inline-block;
+    }
+  }
+}
+@media (min-width: 90rem) {
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    section {
+      margin: 0;
+      flex: 1;
+      min-width: 75ch;
+    }
+  }
 }
