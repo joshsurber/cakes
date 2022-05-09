@@ -2,6 +2,7 @@
 // vim: fdm=marker fmr={,}
 ---
 
+$--size-col: 40rem;
 :root {
   --color-white: hsl(350, 100%, 96%);
   --color-black: hsl(0, 0%, 0%);
@@ -15,6 +16,8 @@
 
   --font-fancy: "Ole", cursive;
   --font-button: "Comfortaa", cursive;
+
+  --size-col: #{$--size-col};
 }
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
 *,
@@ -31,6 +34,8 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
   line-height: 1.5;
+  max-width: calc(var(--size-col) * 1.75);
+  margin-inline: auto;
 }
 header {
   grid-area: header;
@@ -38,8 +43,7 @@ header {
     margin: 0em auto 2rem;
     text-align: center;
     a {
-      font-weight: normal;
-      font: 6rem var(--font-fancy);
+      font: normal 6rem var(--font-fancy);
       color: var(--color-black);
       text-decoration: none;
     }
@@ -116,10 +120,12 @@ strong:hover em {
 }
 section {
   clear: both;
-  max-width: 75ch;
-  margin-inline: 1em;
+  max-width: var(--size-col);
+  margin-inline: auto;
+  padding-inline: 1em;
   position: relative;
   h2 {
+    clear: both;
     text-align: center;
     font: 3rem var(--font-fancy);
   }
@@ -133,7 +139,7 @@ section {
     }
   }
 }
-@media (min-width: 40em) and (max-width: 90rem) {
+@media (min-width: $--size-col) {
   section {
     margin-inline: 1em;
     &:nth-of-type(2n) {
@@ -141,18 +147,6 @@ section {
     }
     h2 {
       display: inline-block;
-    }
-  }
-}
-@media (min-width: 90rem) {
-  #main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    section {
-      margin: 0;
-      flex: 1;
-      min-width: 75ch;
     }
   }
 }
