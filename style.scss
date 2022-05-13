@@ -2,7 +2,7 @@
 // vim: fdm=marker fmr={,}
 ---
 
-$--size-col: 60rem;
+$--size-col: 40rem;
 :root {
   --color-white: hsl(350, 100%, 96%);
   --color-black: hsl(190, 100%, 4%);
@@ -136,6 +136,7 @@ section {
 
   h2 {
     clear: both;
+    margin-inline: auto;
 
     text-align: center;
     font: 6rem var(--font-fancy);
@@ -146,13 +147,24 @@ section {
     float: left;
     margin: 1em;
 
-    transform: rotate(-8deg);
+    transform: rotate(-5deg);
+    transition: transform 250ms ease-in-out;
+    shape-margin: 1rem;
+
+    &:hover {
+      transform: rotate(0) scale(2);
+    }
   }
 
   &:nth-of-type(2n) img {
     float: right;
 
-    transform: rotate(8deg);
+    transform: rotate(5deg);
+    transition: transform 250ms ease-in-out;
+
+    &:hover {
+      transform: rotate(0) scale(2);
+    }
   }
 }
 @media (min-width: $--size-col + 10) {
