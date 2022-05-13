@@ -1,3 +1,6 @@
+url: "http://surber.us/cakes
+baseurl: cakes"
+
 plugins:
     - jekyll-default-layout
     - jekyll-optional-front-matter

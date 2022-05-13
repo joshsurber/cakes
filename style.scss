@@ -5,7 +5,7 @@
 $--size-col: 60rem;
 :root {
   --color-white: hsl(350, 100%, 96%);
-  --color-black: hsl(0, 0%, 0%);
+  --color-black: hsl(190, 100%, 4%);
   --color-gray: hsl(0, 0%, 51%);
   --color-pop: hsl(350, 100%, 78%);
   --color-pop-light: hsl(350, 100%, 88%);
@@ -31,44 +31,46 @@ $--size-col: 60rem;
   margin-top: 1em;
 }
 body {
-  color: var(--color-text);
   background-color: var(--color-background);
-  line-height: 1.5;
-  max-width: calc(var(--size-col) * 1.75);
   margin-inline: auto;
+  max-width: calc(var(--size-col) * 1.75);
+
+  color: var(--color-text);
+  line-height: 1.5;
 }
 header {
   grid-area: header;
+
   h1 {
     margin: 0em auto 2rem;
+
     text-align: center;
-    a {
-      font: normal 6rem var(--font-fancy);
-      color: var(--color-black);
-      text-decoration: none;
-    }
+  }
+
+  a {
+    font: normal 8rem var(--font-fancy);
+    font-size: clamp(72px, 15vh, 8rem);
+    color: var(--color-black);
+    text-decoration: none;
   }
 }
 nav {
-  grid-area: nav;
   display: none;
+  grid-area: nav;
   ul {
     display: flex;
+
     padding: 1rem 0;
   }
+
   li {
     display: block;
     flex: 1;
   }
+
   a {
     display: inline-block;
-    margin-inline: 1em;
-    padding: 1em 2em;
-    font-family: var(--font-button);
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--color-white);
-    background-size: 200%;
+
     background-image: linear-gradient(
       to top left,
       var(--color-pop-light),
@@ -76,12 +78,23 @@ nav {
       var(--color-pop-light)
     );
     background-position: 0;
-    // text-shadow: 1px 1px 1px var(--poplight);
-    text-decoration: none;
-    border: 2px solid var(--color-pop);
+    background-size: 200%;
     border-radius: 1em;
+    border: 2px solid var(--color-pop);
+    margin-inline: 1em;
+    padding: 1em 2em;
+
+    // text-shadow: 1px 1px 1px var(--poplight);
+    color: var(--color-white);
+    font-family: var(--font-button);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
+
     transition: all 200ms ease-in-out;
+
     &:hover {
+      background-color: var(--color-pop);
       background-image: linear-gradient(
         to top left,
         var(--color-pop-dark),
@@ -89,7 +102,7 @@ nav {
         var(--color-pop-dark)
       );
       background-position: 100%;
-      background-color: var(--color-pop);
+
       color: var(--color-black);
     }
   }
@@ -108,43 +121,48 @@ a {
 }
 img {
   display: inline-block;
+
   max-width: 100%;
   max-height: 30vh;
   border: 1px solid var(--color-text);
 }
-strong em {
-  display: none;
-}
-strong:hover em {
-  display: block;
-}
 section {
   clear: both;
-  max-width: var(--size-col);
   margin-inline: auto;
+  max-width: var(--size-col);
   padding-inline: 1em;
+
   position: relative;
+
   h2 {
     clear: both;
+
     text-align: center;
-    font: 3rem var(--font-fancy);
+    font: 6rem var(--font-fancy);
+    font-size: clamp(60px, 8vh, 6rem);
   }
+
   img {
     float: left;
     margin: 1em;
+
+    transform: rotate(-8deg);
   }
-  &:nth-of-type(2n) {
-    img {
-      float: right;
-    }
+
+  &:nth-of-type(2n) img {
+    float: right;
+
+    transform: rotate(8deg);
   }
 }
-@media (min-width: $--size-col) {
+@media (min-width: $--size-col + 10) {
   section {
     margin-inline: 1em;
+
     &:nth-of-type(2n) {
       margin-inline: auto 1em;
     }
+
     h2 {
       display: inline-block;
     }
