@@ -23,12 +23,7 @@ $--size-col: 40rem;
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-}
-* + * {
-  margin-top: 1em;
 }
 body {
   background-color: var(--color-background);
@@ -109,6 +104,12 @@ nav {
 }
 main {
   grid-area: main;
+  * {
+    margin: 0;
+  }
+  * + * {
+    margin-top: 1em;
+  }
 }
 aside {
   grid-area: sidebar;
@@ -146,13 +147,15 @@ section {
   img {
     float: left;
     margin: 1em;
+    box-shadow: 0 0 0.75em var(--color-pop);
 
     transform: rotate(-5deg);
-    transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
     shape-margin: 1rem;
 
     &:hover {
-      transform: rotate(0) scale(2);
+      box-shadow: 0 0 10rem 3rem var(--color-pop-light);
+      transform: rotate(0) scale(2) translateX(30%);
     }
   }
 
@@ -160,10 +163,11 @@ section {
     float: right;
 
     transform: rotate(5deg);
-    transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
     &:hover {
-      transform: rotate(0) scale(2);
+      box-shadow: 0 0 10rem 3rem var(--color-pop-light);
+      transform: rotate(0) scale(2) translateX(-30%);
     }
   }
 }
