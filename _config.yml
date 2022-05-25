@@ -1,5 +1,5 @@
-url: "http://surber.us/cakes
-baseurl: cakes"
+url: "http://surber.us/cakes"
+permalink: pretty
 
 plugins:
     - jekyll-default-layout
