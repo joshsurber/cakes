@@ -1,15 +1,20 @@
 ---
-// vim: fdm=marker fmr={,}
+// vim: fdm=marker
 ---
 
 $--size-col: 40rem;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
 :root {
-  --color-white: hsl(350, 100%, 96%);
-  --color-black: hsl(190, 100%, 4%);
-  --color-gray: hsl(0, 0%, 51%);
-  --color-pop: hsl(350, 100%, 78%);
-  --color-pop-light: hsl(350, 100%, 88%);
-  --color-pop-dark: hsl(350, 100%, 68%);
+  --color-hs: 0 100%;
+  --color-l: 80%;
+  --color-l-lt: 90%;
+  --color-l-dk: 70%;
+  --color-white: hsl(var(--color-hs) 95%);
+  --color-black: hsl(var(--color-hs) 5%);
+  --color-gray: hsl(0, 0%, 50%);
+  --color-pop: hsl(var(--color-hs) var(--color-l));
+  --color-pop-light: hsl(var(--color-hs) var(--color-l-lt));
+  --color-pop-dark: hsl(var(--color-hs) var(--color-l-dk));
 
   --color-background: var(--color-white);
   --color-text: var(--color-black);
@@ -18,104 +23,39 @@ $--size-col: 40rem;
   --font-button: "Comfortaa", cursive;
 
   --size-col: #{$--size-col};
+
+  scroll-behavior: smooth;
 }
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 body {
+  display: grid;
+  gap: 1rem;
+  grid-template:
+    "header"
+    "nav"
+    "main"
+    "sidebar"
+    "footer";
+  @media (min-width: 70rem) {
+    grid-template:
+      "header header"
+      "nav nav"
+      "main sidebar"
+      "footer footer"
+      / 3fr 1fr;
+  }
+
   background-color: var(--color-background);
-  margin-inline: auto;
-  max-width: calc(var(--size-col) * 1.75);
+  margin-inline: 1rem;
 
   color: var(--color-text);
   line-height: 1.5;
-}
-header {
-  grid-area: header;
-
-  h1 {
-    margin: 0em auto 2rem;
-
-    text-align: center;
-  }
-
-  a {
-    font: normal 8rem var(--font-fancy);
-    font-size: clamp(72px, 15vh, 8rem);
-    color: var(--color-black);
-    text-decoration: none;
-  }
-}
-nav {
-  display: none;
-  grid-area: nav;
-  ul {
-    display: flex;
-
-    padding: 1rem 0;
-  }
-
-  li {
-    display: block;
-    flex: 1;
-  }
-
-  a {
-    display: inline-block;
-
-    background-image: linear-gradient(
-      to top left,
-      var(--color-pop-light),
-      var(--color-pop-dark),
-      var(--color-pop-light)
-    );
-    background-position: 0;
-    background-size: 200%;
-    border-radius: 1em;
-    border: 2px solid var(--color-pop);
-    margin-inline: 1em;
-    padding: 1em 2em;
-
-    // text-shadow: 1px 1px 1px var(--poplight);
-    color: var(--color-white);
-    font-family: var(--font-button);
-    font-size: 1.2em;
-    font-weight: 600;
-    text-decoration: none;
-
-    transition: all 200ms ease-in-out;
-
-    &:hover {
-      background-color: var(--color-pop);
-      background-image: linear-gradient(
-        to top left,
-        var(--color-pop-dark),
-        var(--color-pop-light),
-        var(--color-pop-dark)
-      );
-      background-position: 100%;
-
-      color: var(--color-black);
-    }
-  }
-}
-main {
-  grid-area: main;
-  * {
-    margin: 0;
-  }
-  * + * {
-    margin-top: 1em;
-  }
-}
-aside {
-  grid-area: sidebar;
-}
-footer {
-  grid-area: footer;
 }
 a {
   color: var(--color-pop);
@@ -124,63 +64,12 @@ img {
   display: inline-block;
 
   max-width: 100%;
-  max-height: 30vh;
   border: 1px solid var(--color-text);
 }
-section {
-  clear: both;
-  margin-inline: auto;
-  max-width: var(--size-col);
-  padding-inline: 1em;
 
-  position: relative;
-
-  h2 {
-    clear: both;
-    margin-inline: auto;
-
-    text-align: center;
-    font: 6rem var(--font-fancy);
-    font-size: clamp(60px, 8vh, 6rem);
-  }
-
-  img {
-    float: left;
-    margin: 1em;
-    box-shadow: 0 0 0.75em var(--color-pop);
-
-    transform: rotate(-5deg);
-    transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
-    shape-margin: 1rem;
-
-    &:hover {
-      box-shadow: 0 0 10rem 3rem var(--color-pop-light);
-      transform: rotate(0) scale(2) translateX(30%);
-    }
-  }
-
-  &:nth-of-type(2n) img {
-    float: right;
-
-    transform: rotate(5deg);
-    transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
-
-    &:hover {
-      box-shadow: 0 0 10rem 3rem var(--color-pop-light);
-      transform: rotate(0) scale(2) translateX(-30%);
-    }
-  }
-}
-@media (min-width: $--size-col + 10) {
-  section {
-    margin-inline: 1em;
-
-    &:nth-of-type(2n) {
-      margin-inline: auto 1em;
-    }
-
-    h2 {
-      display: inline-block;
-    }
-  }
-}
+@import "header";
+@import "nav";
+@import "main";
+@import "sidebar";
+@import "footer";
+@import "homepage";

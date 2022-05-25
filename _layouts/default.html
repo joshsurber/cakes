@@ -5,26 +5,17 @@
     <title>
       {%if page.title%} {{page.title}} {%else%} Cakes by Tina {%endif%}
     </title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <meta name="viewport" content=width=device-width", initial-scale=1.0,
     maximum-scale=1.0" />
   </head>
   <body>
-    <header>
-      <h1>
-        <a href="{{site.url}}"> Cakes by Tina </a>
-      </h1>
+    <header id="header">
+      <h1><a href="{{site.url}}">Cakes by Tina</a></h1>
     </header>
-    <nav>
-      <ul>
-        <li><a href="index.html">home</a></li>
-        <li><a href="birthday.html">birthday</a></li>
-        <li><a href="wedding.html">wedding</a></li>
-        <li><a href="process.html">process</a></li>
-      </ul>
-    </nav>
-    <main id="main">{{ page.title }}{{content}}</main>
-    <!-- <aside></aside> -->
-    <!-- <footer></footer> -->
+    <nav id="nav">{% include nav.html %}</nav>
+    <main id="main">{{content}}</main>
+    <aside id="sidebar">{% include about.html %}</aside>
+    <footer id="footer"></footer>
   </body>
 </html>
