@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
+:root {
+  --color-hs: 0 100%;
+  --color-l: 80%;
+  --color-l-lt: 90%;
+  --color-l-dk: 70%;
+  --color-white: hsl(var(--color-hs) 95%);
+  --color-black: hsl(var(--color-hs) 5%);
+  --color-gray: hsl(0, 0%, 50%);
+  --color-pop: hsl(var(--color-hs) var(--color-l));
+  --color-pop-light: hsl(var(--color-hs) var(--color-l-lt));
+  --color-pop-dark: hsl(var(--color-hs) var(--color-l-dk));
+  --color-background: var(--color-white);
+  --color-text: var(--color-black);
+  --font-fancy: "Ole", cursive;
+  --font-button: "Comfortaa", cursive;
+  --size-col: 40rem;
+  scroll-behavior: smooth; }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  display: grid;
+  gap: 1rem;
+  grid-template: "header" "nav" "main" "sidebar" "footer";
+  background-color: var(--color-background);
+  margin-inline: 1rem;
+  color: var(--color-text);
+  line-height: 1.5; }
+  @media (min-width: 70rem) {
+    body {
+      grid-template: "header header" "nav nav" "main sidebar" "footer footer" / 3fr 1fr; } }
+
+a {
+  color: var(--color-pop); }
+
+img {
+  display: block;
+  max-width: 100%;
+  border: 1px solid var(--color-text); }
+
+#header {
+  grid-area: header; }
+  #header h1 {
+    margin: 0em auto 2rem;
+    font: normal clamp(1em, 23vw, 9em) var(--font-fancy);
+    text-align: center;
+    text-shadow: 0 0 0.25em var(--color-gray); }
+  #header a {
+    color: var(--color-black);
+    text-decoration: none; }
+
+#nav {
+  display: none;
+  grid-area: nav; }
+  #nav ul {
+    display: flex;
+    padding: 1rem 0; }
+  #nav li {
+    display: block;
+    flex: 1; }
+  #nav a {
+    display: inline-block;
+    background-image: linear-gradient(to top left, var(--color-pop-light), var(--color-pop-dark), var(--color-pop-light));
+    background-position: 0;
+    background-size: 200%;
+    border-radius: 1em;
+    border: 2px solid var(--color-pop);
+    margin-inline: 1em;
+    padding: 1em 2em;
+    color: var(--color-white);
+    font-family: var(--font-button);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 200ms ease-in-out; }
+    #nav a:hover {
+      background-color: var(--color-pop);
+      background-image: linear-gradient(to top left, var(--color-pop-dark), var(--color-pop-light), var(--color-pop-dark));
+      background-position: 100%;
+      color: var(--color-black); }
+
+#main {
+  grid-area: main; }
+
+#sidebar {
+  grid-area: sidebar;
+  max-width: 60ch;
+  margin-inline: auto; }
+
+#footer {
+  grid-area: footer; }
+
+#homepage {
+  max-width: 70rem;
+  margin-inline: auto; }
+  #homepage section {
+    display: grid;
+    gap: 1rem;
+    grid-template: "h2" "img" "p";
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 1px solid var(--color-pop);
+    border-radius: 1rem;
+    background: var(--color-pop-light); }
+    #homepage section h2 {
+      grid-area: h2;
+      text-align: center;
+      font: clamp(1em, 15vw, 6em) var(--font-fancy); }
+    #homepage section p {
+      grid-area: p; }
+    #homepage section img {
+      grid-area: img;
+      align-self: center;
+      justify-self: center;
+      border-radius: 1rem;
+      box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      transition: transform 300ms ease-in-out, border-color 1000ms ease-in-out, border-radius 600ms ease-in-out; }
+    @media (min-width: 40rem) {
+      #homepage section {
+        grid-template: "img h2" "img p" / 1fr 3fr; }
+        #homepage section:nth-of-type(2n) {
+          grid-template: "h2 img" "p img" / 3fr 1fr; }
+        #homepage section img:hover {
+          border-radius: 0;
+          border-color: var(--color-pop-dark);
+          transform: scale(1.5) rotate(0) !important; } }
+    @media (min-width: 70rem) {
+      #homepage section {
+        max-width: 40rem;
+        margin-inline: 1rem auto; }
+        #homepage section img {
+          transform: rotate(-3deg); }
+        #homepage section:nth-of-type(2n) {
+          margin-inline: auto 1rem; }
+          #homepage section:nth-of-type(2n) img {
+            transform: rotate(3deg); } }
+    #homepage section + section {
+      margin-top: 3rem; }
+
+#homepage {
+  z-index: 1; }
+  #homepage section {
+    position: relative;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25); }
+    #homepage section::before, #homepage section::after {
+      position: absolute;
+      content: "";
+      inset: 90% 1rem 1px;
+      box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+      z-index: -1; }
+    #homepage section::before {
+      transform: rotate(3deg);
+      transform-origin: bottom right; }
+    #homepage section::after {
+      transform: rotate(-3deg);
+      transform-origin: bottom left; }
