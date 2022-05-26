@@ -27,9 +27,11 @@
       justify-self: center;
 
       border-radius: 1rem;
+      box-shadow: 1em 1em 1em rgba(0, 0, 0, 15%);
       z-index: 1;
 
-      transition: transform 300ms ease-in-out;
+      transition: transform 300ms ease-in-out, border-color 1000ms ease-in-out,
+        border-radius 600ms ease-in-out;
     }
     @media (min-width: 40rem) {
       grid-template:
@@ -44,7 +46,8 @@
       }
       img:hover {
         border-radius: 0;
-        transform: scale(1.5) rotate(0);
+        border-color: var(--color-pop-dark);
+        transform: scale(1.5) rotate(0) !important;
       }
     }
     @media (min-width: 70rem) {
