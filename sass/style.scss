@@ -2,6 +2,7 @@
 // vim: fdm=marker
 // ---
 
+$shortSidebar: 1;
 $--size-col: 40rem;
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
 :root {
@@ -43,12 +44,21 @@ body {
     "sidebar"
     "footer";
   @media (min-width: 70rem) {
-    grid-template:
-      "header header"
-      "nav nav"
-      "main sidebar"
-      "footer footer"
-      / 3fr 1fr;
+    @if $shortSidebar==1 {
+      grid-template:
+        "header header"
+        "nav nav"
+        "main sidebar"
+        "footer footer"
+        / 3fr 1fr;
+    } @else {
+      grid-template:
+        "header sidebar"
+        "nav sidebar"
+        "main sidebar"
+        "footer footer"
+        / 3fr 1fr;
+    }
   }
 
   background-color: var(--color-background);

@@ -1,0 +1,10 @@
+#sidebar {
+  grid-area: sidebar;
+
+  max-width: 60ch;
+  margin: 1em auto;
+  p + p {
+    margin-top: 1em;
+    text-indent: 1em;
+  }
+}

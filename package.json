@@ -1,0 +1,26 @@
+{
+  "name": "cakes",
+  "version": "1.0.0",
+  "description": "Cakes by Tina, at <http://tntcakery.com>",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel styles:watch browsersync",
+    "styles:watch": "sass --watch --no-source-map sass:.",
+    "browsersync": "browser-sync start --server --files \"*.html, *.js, *.css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshsurber/cakes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshsurber/cakes/issues"
+  },
+  "homepage": "https://github.com/joshsurber/cakes#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.52.1"
+  }
+}
