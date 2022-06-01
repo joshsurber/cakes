@@ -6,65 +6,103 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>TnT Cakery</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <header id="header">
-      <h1><a href="/">TnT Cakery</a></h1>
+      <h1 id="logo"><a href="/">TnT Cakery</a></h1>
+      <nav id="mainnav">
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About me</a></li>
+        </ul>
+      </nav>
     </header>
-    <nav id="nav">
-      <ul>
-        <li><a href="/">home</a></li>
-        <li><a href="/birthday">birthday</a></li>
-        <li><a href="/wedding">wedding</a></li>
-        <li><a href="/process">process</a></li>
-      </ul>
-    </nav>
-    <main id="main">
-      <div id="homepage">
-        <section>
-          <h2>Weddings</h2>
-          <img src="images/wedding4133.jpg" alt="" loading="lazy" />
-          <p>
-            You only get so many weddings in your life, and a big part of them
-            is the cake. Make your next wedding more special than the last with
-            a beautiful, custom design.
-          </p>
-        </section>
 
-        <section>
-          <h2>Birthdays</h2>
-          <img src="images/birthday0128.jpg" alt="" loading="lazy" />
-          <p>
-            Birthdays are important. Whether you are celebrating your partner's
-            birthday, your child's, your dog's, or you are just a very sad
-            person ordering a cake for your own birthday, I can make a special
-            cake for the special day. From small cupcakes to a cake big enough
-            to hold all of <strong>my</strong> candles, it'll be the highlight
-            of any celebration.
-          </p>
-        </section>
+    <div id="hero">
+      <div>
+        <p>It's not a celebration until there is cake</p>
+        <p><a href="#order" class="button">Place an order</a></p>
+      </div>
+      <div><img src="images/hero-img.png" alt="" /></div>
+    </div>
 
-        <section>
-          <h2>Special occasions</h2>
-          <img src="images/birthday0781.jpg" alt="" loading="lazy" />
-          <p>
-            Graduation? Office party? Sportsball win? A six-foot-long penis cake
-            for a bachelorette party? I can do that.
-          </p>
-        </section>
+    <main id="cards">
+      <div class="card">
+        <h2>Weddings</h2>
+        <img src="images/wedding4133.jpg" alt="" loading="lazy" />
+        <p>
+          You only get so many weddings in your life, and a big part of them is
+          the cake. Make your next wedding more special than the last with a
+          beautiful, custom design.
+        </p>
+      </div>
 
-        <section>
-          <h2>Not cakes</h2>
-          <img src="images/notcakes9677.jpg" alt="" loading="lazy" />
-          <p>
-            Chocolate covered strawberries. Giant cookies. Muffins. Pizza. Well,
-            maybe not pizza, but I can decorate a giant cookie to look like a
-            pizza, if that's your thing.
-          </p>
-        </section>
+      <div class="card">
+        <h2>Birthdays</h2>
+        <img src="images/birthday0128.jpg" alt="" loading="lazy" />
+        <p>
+          Birthdays are important. Whether you are celebrating your partner's
+          birthday, your child's, your dog's, or you are just a very sad person
+          ordering a cake for your own birthday, I can make a special cake for
+          the special day. From small cupcakes to a cake big enough to hold all
+          of <strong>my</strong> candles, it'll be the highlight of any
+          celebration.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Special occasions</h2>
+        <img src="images/birthday0781.jpg" alt="" loading="lazy" />
+        <p>
+          Graduation? Office party? Sportsball win? A six-foot-long penis cake
+          for a bachelorette party? I can do that.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Not cakes</h2>
+        <img src="images/notcakes9677.jpg" alt="" loading="lazy" />
+        <p>
+          Chocolate covered strawberries. Giant cookies. Muffins. Pizza. Well,
+          maybe not pizza, but I can decorate a giant cookie to look like a
+          pizza, if that's your thing.
+        </p>
       </div>
     </main>
-    <aside id="sidebar">
+
+    <aside id="contact">
+      <p>
+        Contact me about an order at:<br />
+        (123) 456=7890
+      </p>
+      <form
+        action="/emailsuccess"
+        name="contact"
+        data-netlify="true"
+        netlify-honeypot="website"
+      >
+        <input type="hidden" name="subject" value="Cake order" />
+
+        <label for="name"> Name </label>
+        <input type="text" name="name" id="name" />
+
+        <label for="email"> Email </label>
+        <input type="email" name="email" id="email" />
+
+        <label for="message"> Please describe what you need </label>
+        <textarea name="message" id="message"></textarea>
+
+        <label for="website"> Leave this blank </label>
+        <input type="text" name="website" id="website" />
+
+        <label for="date"> When do you need it? </label>
+        <input type="date" name="date" id="date" />
+        <button type="submit" id="submit">Send message</button>
+      </form>
+    </aside>
+
+    <footer id="about">
       <p>
         <img src="images/tina.png" alt="" />
 
@@ -100,7 +138,6 @@
         4 bonus step-children!), grandma to 7 beautiful grandchildren with one
         more on the way.
       </p>
-    </aside>
-    <footer id="footer"></footer>
+    </footer>
   </body>
 </html>

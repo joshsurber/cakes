@@ -2,28 +2,28 @@
 // vim: fdm=marker
 // ---
 
-$shortSidebar: 1;
-$--size-col: 40rem;
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
 :root {
-  --color-hs: 0 100%;
+  --color-h: 0;
+  --color-s: 100%;
+  --color-hs: var(--color-h) var(--color-s);
   --color-l: 80%;
   --color-l-lt: 90%;
   --color-l-dk: 70%;
-  --color-white: hsl(var(--color-hs) 95%);
+  --color-l-xdk: 50%;
+  --color-white: hsl(var(--color-hs) 97%);
   --color-black: hsl(var(--color-hs) 5%);
   --color-gray: hsl(0, 0%, 50%);
   --color-pop: hsl(var(--color-hs) var(--color-l));
   --color-pop-light: hsl(var(--color-hs) var(--color-l-lt));
   --color-pop-dark: hsl(var(--color-hs) var(--color-l-dk));
+  --color-pop-xdark: hsl(var(--color-hs) var(--color-l-xdk));
 
   --color-background: var(--color-white);
   --color-text: var(--color-black);
 
   --font-fancy: "Ole", cursive;
   --font-button: "Comfortaa", cursive;
-
-  --size-col: #{$--size-col};
 
   scroll-behavior: smooth;
 }
@@ -35,34 +35,8 @@ $--size-col: 40rem;
   box-sizing: border-box;
 }
 body {
-  display: grid;
-  gap: 1rem;
-  grid-template:
-    "header"
-    "nav"
-    "main"
-    "sidebar"
-    "footer";
-  @media (min-width: 70rem) {
-    @if $shortSidebar==1 {
-      grid-template:
-        "header header"
-        "nav nav"
-        "main sidebar"
-        "footer footer"
-        / 3fr 1fr;
-    } @else {
-      grid-template:
-        "header sidebar"
-        "nav sidebar"
-        "main sidebar"
-        "footer footer"
-        / 3fr 1fr;
-    }
-  }
-
   background-color: var(--color-background);
-  margin-inline: 1rem;
+  // margin-inline: 1rem;
 
   color: var(--color-text);
   line-height: 1.5;
@@ -78,8 +52,12 @@ img {
 }
 
 @import "header";
-@import "nav";
+@import "hero";
+@import "buttons";
+@import "cards";
+@import "contact";
+@import "homepage";
 @import "main";
 @import "sidebar";
+@import "about";
 @import "footer";
-@import "homepage";

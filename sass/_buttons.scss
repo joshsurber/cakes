@@ -1,0 +1,38 @@
+.button {
+  display: inline-block;
+
+  background-image: linear-gradient(
+    to top left,
+    var(--color-pop-light),
+    var(--color-pop-dark),
+    var(--color-pop-light)
+  );
+  background-position: 0;
+  background-size: 200%;
+  border-radius: 1em;
+  border: 2px solid var(--color-pop);
+  margin-inline: 1em;
+  padding: 1em 2em;
+
+  color: var(--color-black);
+  font-family: var(--font-button);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px var(--color-pop-light);
+
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    background-image: linear-gradient(
+      to top left,
+      var(--color-pop-dark),
+      var(--color-pop-light),
+      var(--color-pop-dark)
+    );
+    background-position: 100%;
+
+    color: var(--color-pop-xdark);
+    // color: var(--color-black);
+  }
+}

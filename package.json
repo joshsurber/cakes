@@ -4,8 +4,8 @@
   "description": "Cakes by Tina, at <http://tntcakery.com>",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel styles:watch browsersync",
-    "styles:watch": "sass --watch --no-source-map sass:.",
+    "start": "npm-run-all --parallel style:watch browsersync",
+    "style:watch": "sass --watch --no-source-map --load-path=sass style.scss:style.css",
     "browsersync": "browser-sync start --server --files \"*.html, *.js, *.css\""
   },
   "repository": {

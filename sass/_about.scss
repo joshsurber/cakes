@@ -1,0 +1,9 @@
+#about {
+  grid-area: about;
+  // column-width: 60ch;
+  display: flex;
+  gap: 1em;
+  & > * {
+    flex: 1;
+  }
+}
