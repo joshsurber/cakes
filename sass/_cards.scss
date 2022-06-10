@@ -1,15 +1,23 @@
 #cards {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   gap: 1rem;
 
   margin: 1rem auto 0;
   padding: 1rem;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 60rem) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .card {
     flex: 1;
     gap: 1rem;
-    grid-template: "h2" "img" "p";
 
+    max-width: 30rem;
     margin: 1rem auto;
     padding: 1rem;
     border: 1px solid var(--color-pop);
@@ -21,7 +29,10 @@
       grid-area: h2;
 
       text-align: center;
-      font: clamp(1em, 4vw, 3em) var(--font-fancy);
+      font: clamp(2em, 10vw, 3em) var(--ff-fancy);
+      @media (min-width: 40rem) {
+        font-size: clamp(2em, 4vw, 3em);
+      }
     }
     p {
       grid-area: p;
@@ -31,9 +42,10 @@
       align-self: center;
       justify-self: center;
 
-      // aspect-ratio: 1;
       border-radius: 1rem;
       box-shadow: 1em 1em 1em rgba(0, 0, 0, 15%);
+      transition: transform 300ms ease-in-out;
+      // &:hover { transform: scale(1.5); }
     }
     * {
       margin: 0;
@@ -44,6 +56,7 @@
   }
 }
 
+/* Curled shadow*/
 #cards {
   .card {
     position: relative;
@@ -54,18 +67,23 @@
       position: absolute;
       content: "";
 
-      inset: 90% 1rem 1px;
+      // inset: 90% 1rem 1px;
+      left: 0.5rem;
+      right: 0.5rem;
+      bottom: 1px;
+      height: 1rem;
       box-shadow: 0 1rem 1rem rgba(0, 0, 0, 30%);
       background: rebeccapurple;
       z-index: -1;
     }
     &::before {
-      transform: rotate(3deg);
+      transform: rotate(5deg);
       transform-origin: bottom right;
     }
     &::after {
-      transform: rotate(-3deg);
+      transform: rotate(-5deg);
       transform-origin: bottom left;
     }
   }
 }
+/* End curled shadow*/

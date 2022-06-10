@@ -1,23 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Comfortaa&family=Ole&display=swap");
 :root {
-  --color-h: 0;
-  --color-s: 100%;
-  --color-hs: var(--color-h) var(--color-s);
-  --color-l: 80%;
-  --color-l-lt: 90%;
-  --color-l-dk: 70%;
-  --color-l-xdk: 50%;
-  --color-white: hsl(var(--color-hs) 97%);
-  --color-black: hsl(var(--color-hs) 5%);
+  --color-hue: 0;
+  --color-sat: 70%;
+  --color-lightness: 80%;
+  --color-hue-sat: var(--color-hue) var(--color-sat);
+  --color-pop: hsl(var(--color-hue-sat) var(--color-lightness));
+  --color-pop-light: hsl(
+    var(--color-hue-sat) calc(var(--color-lightness) + 10%)
+  );
+  --color-pop-dark: hsl(
+    var(--color-hue-sat) calc(var(--color-lightness) - 10%)
+  );
+  --color-pop-xdark: hsl(var(--color-hue-sat) calc(--color-lightness / 2));
+  --color-white: hsl(var(--color-hue-sat) 95%);
+  --color-black: hsl(var(--color-hue-sat) 5%);
   --color-gray: hsl(0, 0%, 50%);
-  --color-pop: hsl(var(--color-hs) var(--color-l));
-  --color-pop-light: hsl(var(--color-hs) var(--color-l-lt));
-  --color-pop-dark: hsl(var(--color-hs) var(--color-l-dk));
-  --color-pop-xdark: hsl(var(--color-hs) var(--color-l-xdk));
   --color-background: var(--color-white);
   --color-text: var(--color-black);
-  --font-fancy: "Ole", cursive;
-  --font-button: "Comfortaa", cursive;
+  --ff-fancy: "Ole", cursive;
+  --ff-button: "Comfortaa", cursive;
+  --ff-logo: "Berkshire Swash", cursive;
   scroll-behavior: smooth;
 }
 
@@ -47,19 +49,18 @@ img {
 
 #header {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   background-color: var(--color-black);
-}
-#header h1 {
-  font: normal 4rem var(--font-fancy);
-  text-shadow: 0 0 0.25em var(--color-gray);
-}
-#header a {
   color: var(--color-pop);
-  text-decoration: none;
+}
+@media (min-width: 40rem) {
+  #header {
+    flex-direction: row;
+  }
 }
 #header nav ul {
   display: flex;
@@ -67,23 +68,76 @@ img {
   padding: 1rem 0;
 }
 #header nav li {
-  display: block;
   flex: 1 1 auto;
+  list-style-type: none;
+}
+
+#logo {
+  position: relative;
+  margin: auto 1.5em 1em;
+  text-align: center;
+  font-family: var(--ff-logo);
+  line-height: 0.8;
+  font-size: clamp(2rem, 15vw + 1rem, 6rem);
+}
+@media (min-width: 40rem) {
+  #logo {
+    font-size: clamp(1rem, 3vw + 1rem, 3rem);
+    margin-bottom: 0.5em;
+  }
+}
+#logo a {
+  text-decoration: none;
+}
+#logo .word {
+  display: block;
+}
+#logo .flip {
+  display: inline-block;
+  transform: rotateY(180deg);
+}
+#logo::before, #logo::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+#logo::before {
+  width: 180%;
+  height: 100%;
+  border: 0.2em solid currentColor;
+  border-top: 0;
+  border-radius: 50%;
+  bottom: -30%;
+  left: -40%;
+}
+#logo::after {
+  transform: translate(-50%, 1em);
+  bottom: 0;
+  border-bottom: 0.5em solid currentColor;
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  width: 1em;
 }
 
 #hero {
   display: flex;
   padding: 1em;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(to bottom, var(--color-pop), var(--color-pop-light), var(--color-white));
+}
+@media (min-width: 40rem) {
+  #hero {
+    flex-direction: row-reverse;
+  }
 }
 #hero > div {
   flex: 1;
 }
 #hero p {
-  font: normal clamp(3em, 8vw, 6em) var(--font-fancy);
+  padding: 1rem;
+  font: normal clamp(3em, 8vw, 6em) var(--ff-fancy);
   text-align: center;
 }
 #hero img {
@@ -102,7 +156,7 @@ img {
   margin-inline: 1em;
   padding: 1em 2em;
   color: var(--color-black);
-  font-family: var(--font-button);
+  font-family: var(--ff-button);
   font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
@@ -116,16 +170,26 @@ img {
 }
 
 #cards {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1rem auto 0;
   padding: 1rem;
 }
+@media (min-width: 40rem) {
+  #cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 60rem) {
+  #cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 #cards .card {
   flex: 1;
   gap: 1rem;
-  grid-template: "h2" "img" "p";
+  max-width: 30rem;
   margin: 1rem auto;
   padding: 1rem;
   border: 1px solid var(--color-pop);
@@ -135,7 +199,12 @@ img {
 #cards .card h2 {
   grid-area: h2;
   text-align: center;
-  font: clamp(1em, 4vw, 3em) var(--font-fancy);
+  font: clamp(2em, 10vw, 3em) var(--ff-fancy);
+}
+@media (min-width: 40rem) {
+  #cards .card h2 {
+    font-size: clamp(2em, 4vw, 3em);
+  }
 }
 #cards .card p {
   grid-area: p;
@@ -146,6 +215,7 @@ img {
   justify-self: center;
   border-radius: 1rem;
   box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.15);
+  transition: transform 300ms ease-in-out;
 }
 #cards .card * {
   margin: 0;
@@ -154,26 +224,31 @@ img {
   margin-top: 1em;
 }
 
+/* Curled shadow*/
 #cards .card {
   position: relative;
 }
 #cards .card::before, #cards .card::after {
   position: absolute;
   content: "";
-  inset: 90% 1rem 1px;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 1px;
+  height: 1rem;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
   background: rebeccapurple;
   z-index: -1;
 }
 #cards .card::before {
-  transform: rotate(3deg);
+  transform: rotate(5deg);
   transform-origin: bottom right;
 }
 #cards .card::after {
-  transform: rotate(-3deg);
+  transform: rotate(-5deg);
   transform-origin: bottom left;
 }
 
+/* End curled shadow*/
 label[for=website],
 input#website {
   display: none;
@@ -182,26 +257,30 @@ input#website {
 #contact {
   grid-area: contact;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
   align-items: center;
   margin: 3rem 0;
   padding: 2rem 1rem;
   background-image: linear-gradient(to right, var(--color-pop), var(--color-pop-light), var(--color-white));
+}
+@media (min-width: 40rem) {
+  #contact {
+    flex-direction: row;
+  }
 }
 #contact p {
   flex: 1;
   text-align: center;
   position: relative;
 }
-#contact p::after {
-  content: "Or";
-  position: absolute;
-  inset: -1rem 3rem auto auto;
+#contact div {
+  flex: 1;
+  text-align: center;
   font: 4rem var(--font-fancy);
   color: var(--color-black);
 }
 #contact form {
-  flex: 1;
+  flex: 2;
   display: grid;
   gap: 0.5rem;
   grid-template-columns: auto 1fr;
@@ -215,114 +294,34 @@ input#website {
   padding: 1em 2em;
 }
 
-#homepage {
-  max-width: 70rem;
-  margin-inline: auto;
-}
-#homepage section {
-  display: grid;
-  gap: 1rem;
-  grid-template: "h2" "img" "p";
-  margin: 1rem auto;
-  padding: 1rem;
-  border: 1px solid var(--color-pop);
-  border-radius: 1rem;
-  background: var(--color-pop-light);
-  background-image: linear-gradient(to bottom, var(--color-pop-light), var(--color-pop));
-}
-#homepage section h2 {
-  grid-area: h2;
-  text-align: center;
-  font: clamp(1em, 15vw, 6em) var(--font-fancy);
-}
-#homepage section p {
-  grid-area: p;
-}
-#homepage section img {
-  grid-area: img;
-  align-self: center;
-  justify-self: center;
-  border-radius: 1rem;
-  box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.15);
-  z-index: 1;
-  transition: transform 300ms ease-in-out, border-color 1000ms ease-in-out, border-radius 600ms ease-in-out;
-}
-@media (min-width: 40rem) {
-  #homepage section {
-    grid-template: "img h2" "img p"/1fr 3fr;
-  }
-  #homepage section:nth-of-type(2n) {
-    grid-template: "h2 img" "p img"/3fr 1fr;
-  }
-  #homepage section img:hover {
-    border-radius: 0;
-    border-color: var(--color-pop-dark);
-    transform: scale(1.5) rotate(0) !important;
-  }
-}
-@media (min-width: 70rem) {
-  #homepage section {
-    max-width: 40rem;
-    margin-inline: 1rem auto;
-  }
-  #homepage section img {
-    transform: rotate(-3deg);
-  }
-  #homepage section:nth-of-type(2n) {
-    margin-inline: auto 1rem;
-  }
-  #homepage section:nth-of-type(2n) img {
-    transform: rotate(3deg);
-  }
-}
-#homepage section + section {
-  margin-top: 3rem;
-}
-
-#homepage {
-  z-index: 1;
-}
-#homepage section {
-  position: relative;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
-}
-#homepage section::before, #homepage section::after {
-  position: absolute;
-  content: "";
-  inset: 90% 1rem 1px;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
-  z-index: -1;
-}
-#homepage section::before {
-  transform: rotate(3deg);
-  transform-origin: bottom right;
-}
-#homepage section::after {
-  transform: rotate(-3deg);
-  transform-origin: bottom left;
-}
-
-#main {
-  grid-area: main;
-}
-
-#sidebar {
-  grid-area: sidebar;
-  max-width: 60ch;
-  margin: 1em auto;
-}
-#sidebar p + p {
-  margin-top: 1em;
-  text-indent: 1em;
-}
-
 #about {
   grid-area: about;
-  display: flex;
   gap: 1em;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 #about > * {
   flex: 1;
+}
+#about p + p {
+  margin-top: 1em;
+}
+@media (min-width: 40rem) {
+  #about {
+    columns: 2 auto;
+  }
+}
+@media (min-width: 60rem) {
+  #about {
+    columns: 3 auto;
+  }
+}
+#about p {
+  break-inside: avoid;
+}
+#about img {
+  break-after: column;
 }
 
 #footer {

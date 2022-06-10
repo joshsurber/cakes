@@ -1,8 +1,8 @@
-document.querySelector("form").addEventListener("submit", handleSubmit);
+const form = document.querySelector("form");
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  let myForm = document.getElementById("pizzaOrder");
+  let myForm = e.target;
   let formData = new FormData(myForm);
   fetch("/", {
     method: "POST",
@@ -12,3 +12,4 @@ const handleSubmit = (e) => {
     .then(() => console.log("Form successfully submitted"))
     .catch((error) => alert(error));
 };
+form.addEventListener("submit", handleSubmit);

@@ -5,8 +5,13 @@ input#website {
 #contact {
   grid-area: contact;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  // gap: 1rem;
   align-items: center;
+  // & > * { flex: 1; text-align: center; }
+  @media (min-width: 40rem) {
+    flex-direction: row;
+  }
 
   margin: 3rem 0;
   padding: 2rem 1rem;
@@ -23,20 +28,19 @@ input#website {
 
     text-align: center;
     position: relative;
+  }
 
-    &::after {
-      content: "Or";
-      position: absolute;
+  div {
+    flex: 1;
 
-      inset: -1rem 3rem auto auto;
-
-      font: 4rem var(--font-fancy);
-      color: var(--color-black);
-    }
+    text-align: center;
+    font: 4rem var(--font-fancy);
+    color: var(--color-black);
   }
 
   form {
-    flex: 1;
+    flex: 2;
+
     display: grid;
     gap: 0.5rem;
     grid-template-columns: auto 1fr;

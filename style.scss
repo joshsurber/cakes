@@ -2,28 +2,33 @@
 // vim: fdm=marker
 // ---
 
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Ole&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Comfortaa&family=Ole&display=swap");
 :root {
-  --color-h: 0;
-  --color-s: 100%;
-  --color-hs: var(--color-h) var(--color-s);
-  --color-l: 80%;
-  --color-l-lt: 90%;
-  --color-l-dk: 70%;
-  --color-l-xdk: 50%;
-  --color-white: hsl(var(--color-hs) 97%);
-  --color-black: hsl(var(--color-hs) 5%);
+  --color-hue: 0;
+  --color-sat: 70%;
+  --color-lightness: 80%;
+
+  --color-hue-sat: var(--color-hue) var(--color-sat);
+
+  --color-pop: hsl(var(--color-hue-sat) var(--color-lightness));
+  --color-pop-light: hsl(
+    var(--color-hue-sat) calc(var(--color-lightness) + 10%)
+  );
+  --color-pop-dark: hsl(
+    var(--color-hue-sat) calc(var(--color-lightness) - 10%)
+  );
+  --color-pop-xdark: hsl(var(--color-hue-sat) calc(--color-lightness / 2));
+
+  --color-white: hsl(var(--color-hue-sat) 95%);
+  --color-black: hsl(var(--color-hue-sat) 5%);
   --color-gray: hsl(0, 0%, 50%);
-  --color-pop: hsl(var(--color-hs) var(--color-l));
-  --color-pop-light: hsl(var(--color-hs) var(--color-l-lt));
-  --color-pop-dark: hsl(var(--color-hs) var(--color-l-dk));
-  --color-pop-xdark: hsl(var(--color-hs) var(--color-l-xdk));
 
   --color-background: var(--color-white);
   --color-text: var(--color-black);
 
-  --font-fancy: "Ole", cursive;
-  --font-button: "Comfortaa", cursive;
+  --ff-fancy: "Ole", cursive;
+  --ff-button: "Comfortaa", cursive;
+  --ff-logo: "Berkshire Swash", cursive;
 
   scroll-behavior: smooth;
 }
@@ -56,8 +61,5 @@ img {
 @import "buttons";
 @import "cards";
 @import "contact";
-@import "homepage";
-@import "main";
-@import "sidebar";
 @import "about";
 @import "footer";

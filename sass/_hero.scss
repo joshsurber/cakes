@@ -1,7 +1,7 @@
 #hero {
   display: flex;
   padding: 1em;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
 
@@ -12,12 +12,19 @@
     var(--color-pop-light),
     var(--color-white)
   );
+
+  @media (min-width: 40rem) {
+    flex-direction: row-reverse;
+  }
+
   & > div {
     flex: 1;
   }
 
   p {
-    font: normal clamp(3em, 8vw, 6em) var(--font-fancy);
+    padding: 1rem;
+
+    font: normal clamp(3em, 8vw, 6em) var(--ff-fancy);
     text-align: center;
   }
 
