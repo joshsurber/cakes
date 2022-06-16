@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Comfortaa&family=Ole&display=swap");
+
+:root {
+  /* Set HSL for brand color */
+  --color-hue: 0;
+  --color-sat: 70%;
+  --color-lightness: 80%;
+  --color-hue-sat: var(--color-hue) var(--color-sat);
+
+  /* Brand color and variants */
+  --color-pop: hsl(var(--color-hue-sat) var(--color-lightness));
+  --color-pop-light: hsl(
+    var(--color-hue-sat) calc(var(--color-lightness) + 10%)
+  );
+  --color-pop-dark: hsl(
+    var(--color-hue-sat) calc(var(--color-lightness) - 10%)
+  );
+  --color-pop-xdark: hsl(var(--color-hue-sat) calc(--color-lightness / 2));
+
+  /* Neutral colors */
+  --color-white: hsl(var(--color-hue-sat) 95%);
+  --color-black: hsl(var(--color-hue-sat) 5%);
+  --color-gray: hsl(0, 0%, 50%);
+
+  /* Overrideable text and bg colors */
+  --color-background: var(--color-white);
+  --color-text: var(--color-black);
+
+  /* Font families used */
+  --ff-script: "Ole", cursive;
+  --ff-futuristic: "Comfortaa", cursive;
+  --ff-70s: "Berkshire Swash", cursive;
+
+  /* Where to use them */
+  --ff-logo: var(--ff-70s);
+  --ff-hero: var(--ff-70s);
+  --ff-button: var(--ff-futuristic);
+  --ff-card-title: var(--ff-script);
+
+  scroll-behavior: smooth;
+}

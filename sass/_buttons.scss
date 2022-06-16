@@ -1,5 +1,7 @@
+button,
 .button {
-  display: inline-block;
+  // display: inline-block;
+  display: block;
 
   background-image: linear-gradient(
     to top left,
@@ -7,11 +9,10 @@
     var(--color-pop-dark),
     var(--color-pop-light)
   );
-  background-position: 0;
   background-size: 200%;
-  border-radius: 1em;
-  border: 2px solid var(--color-pop);
-  margin-inline: 1em;
+  border-radius: 0.5em;
+  border: 1px solid var(--color-pop-dark);
+  margin-top: 1em;
   padding: 1em 2em;
 
   color: var(--color-black);
@@ -21,7 +22,7 @@
   text-decoration: none;
   text-shadow: 1px 1px 1px var(--color-pop-light);
 
-  transition: all 200ms ease-in-out;
+  transition: 200ms;
 
   &:hover {
     background-image: linear-gradient(

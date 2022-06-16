@@ -12,78 +12,46 @@
   @media (min-width: 60rem) {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+.card {
+  @extend .curl;
+  flex: 1;
+  gap: 1rem;
 
-  .card {
-    flex: 1;
-    gap: 1rem;
+  max-width: 30rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid var(--color-pop);
+  border-radius: 1rem;
+  background: var(--color-pop-light);
+  // background-image: linear-gradient( to bottom, var(--color-pop-light), var(--color-pop));
 
-    max-width: 30rem;
-    margin: 1rem auto;
-    padding: 1rem;
-    border: 1px solid var(--color-pop);
+  h2 {
+    grid-area: h2;
+
+    text-align: center;
+    font: clamp(2em, 10vw, 3em) var(--ff-card-title);
+    @media (min-width: 40rem) {
+      font-size: clamp(2em, 4vw, 3em);
+    }
+  }
+  p {
+    grid-area: p;
+  }
+  img {
+    grid-area: img;
+    align-self: center;
+    justify-self: center;
+
     border-radius: 1rem;
-    background: var(--color-pop-light);
-    // background-image: linear-gradient( to bottom, var(--color-pop-light), var(--color-pop));
-
-    h2 {
-      grid-area: h2;
-
-      text-align: center;
-      font: clamp(2em, 10vw, 3em) var(--ff-fancy);
-      @media (min-width: 40rem) {
-        font-size: clamp(2em, 4vw, 3em);
-      }
-    }
-    p {
-      grid-area: p;
-    }
-    img {
-      grid-area: img;
-      align-self: center;
-      justify-self: center;
-
-      border-radius: 1rem;
-      box-shadow: 1em 1em 1em rgba(0, 0, 0, 15%);
-      transition: transform 300ms ease-in-out;
-      // &:hover { transform: scale(1.5); }
-    }
-    * {
-      margin: 0;
-    }
-    * + * {
-      margin-top: 1em;
-    }
+    box-shadow: 1em 1em 1em rgba(0, 0, 0, 15%);
+    transition: transform 300ms ease-in-out;
+    // &:hover { transform: scale(1.5); }
+  }
+  * {
+    margin: 0;
+  }
+  * + * {
+    margin-top: 1em;
   }
 }
-
-/* Curled shadow*/
-#cards {
-  .card {
-    position: relative;
-    // box-shadow: 0 1rem 1rem rgba(0, 0, 0, 25%);
-
-    &::before,
-    &::after {
-      position: absolute;
-      content: "";
-
-      // inset: 90% 1rem 1px;
-      left: 0.5rem;
-      right: 0.5rem;
-      bottom: 1px;
-      height: 1rem;
-      box-shadow: 0 1rem 1rem rgba(0, 0, 0, 30%);
-      background: rebeccapurple;
-      z-index: -1;
-    }
-    &::before {
-      transform: rotate(5deg);
-      transform-origin: bottom right;
-    }
-    &::after {
-      transform: rotate(-5deg);
-      transform-origin: bottom left;
-    }
-  }
-}
-/* End curled shadow*/
