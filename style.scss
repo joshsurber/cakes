@@ -1,15 +1,26 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+  &,
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 body {
   background-color: var(--color-background);
 
   color: var(--color-text);
   line-height: 1.5;
+}
+h2 {
+  text-align: center;
+  font-family: var(--ff-hero);
+  font-weight: normal;
+  font-size: 3rem;
+  * > & {
+    margin-top: 5rem;
+  }
 }
 a {
   color: var(--color-pop);
@@ -28,6 +39,7 @@ img {
 
 @import "header";
 @import "hero";
+@import "testimonials";
 @import "contact";
 @import "about";
 @import "footer";

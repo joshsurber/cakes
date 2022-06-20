@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Comfortaa&family=Ole&display=swap");
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,6 +9,16 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   line-height: 1.5;
+}
+
+h2 {
+  text-align: center;
+  font-family: var(--ff-hero);
+  font-weight: normal;
+  font-size: 3rem;
+}
+* > h2 {
+  margin-top: 5rem;
 }
 
 a {
@@ -26,7 +34,7 @@ img {
 :root {
   /* Set HSL for brand color */
   --color-hue: 0;
-  --color-sat: 70%;
+  --color-sat: 50%;
   --color-lightness: 80%;
   --color-hue-sat: var(--color-hue) var(--color-sat);
   /* Brand color and variants */
@@ -57,10 +65,10 @@ img {
   scroll-behavior: smooth;
 }
 
-.curl, #contact, .card {
+.curl, #contact, .card, #testimonials > blockquote {
   position: relative;
 }
-.curl::before, #contact::before, .card::before, .curl::after, #contact::after, .card::after {
+.curl::before, #contact::before, .card::before, #testimonials > blockquote::before, .curl::after, #contact::after, .card::after, #testimonials > blockquote::after {
   position: absolute;
   content: "";
   isolation: isolate;
@@ -69,11 +77,11 @@ img {
   background: rebeccapurple;
   z-index: -1;
 }
-.curl::before, #contact::before, .card::before {
+.curl::before, #contact::before, .card::before, #testimonials > blockquote::before {
   transform: rotate(3deg);
   transform-origin: bottom right;
 }
-.curl::after, #contact::after, .card::after {
+.curl::after, #contact::after, .card::after, #testimonials > blockquote::after {
   transform: rotate(-3deg);
   transform-origin: bottom left;
 }
@@ -102,7 +110,9 @@ button:hover,
   color: var(--color-pop-xdark);
 }
 
-#cards {
+.cards,
+#cards,
+#testimonials {
   display: grid;
   flex-wrap: wrap;
   gap: 1rem;
@@ -110,17 +120,21 @@ button:hover,
   padding: 1rem;
 }
 @media (min-width: 40rem) {
-  #cards {
+  .cards,
+#cards,
+#testimonials {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 60rem) {
-  #cards {
+  .cards,
+#cards,
+#testimonials {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.card {
+.card, #testimonials > blockquote {
   flex: 1;
   gap: 1rem;
   max-width: 30rem;
@@ -130,20 +144,20 @@ button:hover,
   border-radius: 1rem;
   background: var(--color-pop-light);
 }
-.card h2 {
+.card h2, #testimonials > blockquote h2 {
   grid-area: h2;
   text-align: center;
   font: clamp(2em, 10vw, 3em) var(--ff-card-title);
 }
 @media (min-width: 40rem) {
-  .card h2 {
+  .card h2, #testimonials > blockquote h2 {
     font-size: clamp(2em, 4vw, 3em);
   }
 }
-.card p {
+.card p, #testimonials > blockquote p {
   grid-area: p;
 }
-.card img {
+.card img, #testimonials > blockquote img {
   grid-area: img;
   align-self: center;
   justify-self: center;
@@ -151,10 +165,10 @@ button:hover,
   box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.15);
   transition: transform 300ms ease-in-out;
 }
-.card * {
+.card *, #testimonials > blockquote * {
   margin: 0;
 }
-.card * + * {
+.card * + *, #testimonials > blockquote * + * {
   margin-top: 1em;
 }
 
@@ -218,7 +232,7 @@ button:hover,
 }
 #hero p {
   padding: 1rem;
-  font: normal clamp(3em, 6vw + 1rem, 5em) var(--ff-hero);
+  font: normal clamp(3em, 6vw + 1rem, 5em)/1.1 var(--ff-hero);
   text-align: center;
 }
 #hero img {
@@ -226,6 +240,9 @@ button:hover,
   margin: 0 auto;
 }
 
+#testimonials {
+  grid-area: "testimonials";
+}
 label[for=website],
 input#website {
   display: none;
