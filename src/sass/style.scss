@@ -1,0 +1,79 @@
+* {
+  scrollbar-color: var(--color-pop) var(--color-pop-light);
+  scrollbar-width: thin;
+
+  &,
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+body {
+  background-color: var(--color-background);
+
+  color: var(--color-text);
+  line-height: 1.5;
+}
+h2 {
+  text-align: center;
+  font-family: var(--ff-hero);
+  font-weight: normal;
+  font-size: 3rem;
+  * > & {
+    margin-top: 5rem;
+  }
+}
+a {
+  color: var(--color-pop);
+}
+img {
+  display: block;
+
+  max-width: 100%;
+  border: 1px solid var(--color-text);
+}
+img:not([alt]),
+img[alt=""] {
+  filter: grayscale(100%);
+}
+
+@import "tokens";
+@import "curl";
+@import "buttons";
+@import "cards";
+
+@import "header";
+@import "hero";
+@import "testimonials";
+@import "contact";
+@import "about";
+@import "footer";
+::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 0.5rem;
+  background: var(--color-pop-light);
+
+  &-button {
+    background: var(--color-pop-xdark);
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+  }
+  &-thumb {
+    background: var(--color-pop-xdark);
+  }
+  &-track {
+    background: var(--color-pop-light);
+  }
+  &-track-piece {
+    background: var(--color-pop-light);
+    border: 1px solid var(--color-pop-xdark);
+  }
+  &-corner {
+    background: var(--color-pop);
+  }
+}
+::-webkit-resizer {
+  background: var(--color-pop);
+}

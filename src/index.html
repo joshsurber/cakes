@@ -1,0 +1,66 @@
+---
+layout: base
+
+heroImg: "/images/hero-img.png"
+---
+
+<div id="hero">
+  <div><img src="{{ heroImg }}" alt="A beautiful cake" /></div>
+  <div>
+    <p>{{ settings.site.tagline }}</p>
+    <p><a href="#order" class="button">Request a quote</a></p>
+  </div>
+</div>
+
+<h2>What I've made...</h2>
+<section id="cakes" class="cards">
+  {% for cake in collections.cakes %}
+  <div class="card">
+    <p>{{ cake.data.description }}</p>
+    {% for src in cake.data.images %}
+    <img src="/images/{{ src  }}" alt="{{ cake.data.alt }}" />
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+
+<h2>What people are saying...</h2>
+<section id="testimonials" class="cards">
+  {% for review in collections.testimonials %} {% include "_testimonials.html"
+  %} {% endfor %}
+</section>
+
+<section id="contact">
+  <p>
+    Contact me about an order at:<br />
+    {{ settings.phone }}<br />
+    <a href="tel:{{ settings.phone | digits }}" class="button">Call now</a>
+  </p>
+  <div>Or</div>
+
+  <form
+    action="/emailsuccess"
+    name="contact"
+    id="order"
+    netlify
+    netlify-honeypot="website"
+  >
+    <input type="hidden" name="subject" value="Cake inquiry" />
+
+    <label for="name"> Name </label>
+    <input type="text" name="name" id="name" required />
+
+    <label for="email"> Email </label>
+    <input type="email" name="email" id="email" required />
+
+    <label for="message"> What do you need? </label>
+    <textarea name="message" id="message" required></textarea>
+
+    <label for="website"> Leave this blank </label>
+    <input type="text" name="website" id="website" />
+
+    <label for="date"> When do you need it? </label>
+    <input type="date" name="date" id="date" />
+    <button type="submit" id="submit">Send message</button>
+  </form>
+</section>
