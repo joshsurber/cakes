@@ -1,6 +1,7 @@
 #nav {
-  display: none;
+  // display: none;
   grid-area: nav;
+
   ul {
     display: flex;
 
@@ -15,12 +16,10 @@
   a {
     display: inline-block;
 
-    background-image: linear-gradient(
-      to top left,
-      var(--color-pop-light),
-      var(--color-pop-dark),
-      var(--color-pop-light)
-    );
+    background-image: linear-gradient(to top left,
+        var(--color-pop-light),
+        var(--color-pop-dark),
+        var(--color-pop-light));
     background-position: 0;
     background-size: 200%;
     border-radius: 1em;
@@ -39,12 +38,10 @@
 
     &:hover {
       background-color: var(--color-pop);
-      background-image: linear-gradient(
-        to top left,
-        var(--color-pop-dark),
-        var(--color-pop-light),
-        var(--color-pop-dark)
-      );
+      background-image: linear-gradient(to top left,
+          var(--color-pop-dark),
+          var(--color-pop-light),
+          var(--color-pop-dark));
       background-position: 100%;
 
       color: var(--color-black);

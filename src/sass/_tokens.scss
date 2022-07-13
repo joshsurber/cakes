@@ -2,7 +2,7 @@
 
 :root {
   // Set HSL for brand color
-  --color-hue: 0;
+  --color-hue: 00;
   --color-sat: 50%;
   --color-lightness: 80%;
   --color-hue-sat: var(--color-hue) var(--color-sat);
@@ -28,6 +28,7 @@
   --color-white: hsl(var(--color-hue-sat) 95%);
   --color-black: hsl(var(--color-hue-sat) 5%);
   --color-gray: hsl(0, 0%, 50%);
+  --color-grey: var(--color-gray);
 
   // Overrideable text and bg colors
   --color-background: var(--color-white);
@@ -43,6 +44,21 @@
   --ff-hero: var(--ff-70s);
   --ff-button: var(--ff-futuristic);
   --ff-card-title: var(--ff-script);
+  --ff-heading: var(--ff-70s);
+  --ff-body: sans-serif;
+  --ff-decorative: var(--ff-script);
+
+  --bdr-rds: 0.5rem;
+
+  --size-1: 0.125rem;
+  --size-2: 0.25rem;
+  --size-3: 0.5rem;
+  --size-4: 0.75rem;
+  --size-5: 1rem;
+  --size-6: 1.5rem;
+  --size-7: 2rem;
+  --size-8: 3rem;
+  --size-9: 5rem;
 
   scroll-behavior: smooth;
 }

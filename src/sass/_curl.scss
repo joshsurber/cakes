@@ -1,5 +1,7 @@
 .curl {
-  $rotate: 3deg;
+  --_rotate: var(--curliness, 3deg);
+  --_thickness: var(--thickness, 1rem);
+  --_opacity: var(--opacity, 30%);
   position: relative;
 
   &::before,
@@ -7,18 +9,18 @@
     position: absolute;
     content: "";
 
-    isolation: isolate;
-    inset: calc(100% - 1rem) 0.5rem 1px;
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 30%);
+    inset: calc(100% - var(--_thickness)) var(--_thickness) 1px;
+    box-shadow: 0 var(--_thickness) var(--_thickness)
+      rgba(0, 0, 0, var(--_opacity));
     background: rebeccapurple;
     z-index: -1;
   }
   &::before {
-    transform: rotate($rotate);
+    transform: rotate(var(--_rotate));
     transform-origin: bottom right;
   }
   &::after {
-    transform: rotate(-$rotate);
+    transform: rotate(calc(0deg - var(--_rotate)));
     transform-origin: bottom left;
   }
 }

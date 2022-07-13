@@ -1,8 +1,3 @@
 #testimonials {
   grid-area: "testimonials";
-  @extend #cards;
-
-  & > blockquote {
-    @extend .card;
-  }
 }

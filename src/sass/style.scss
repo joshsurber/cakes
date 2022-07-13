@@ -1,79 +1,172 @@
+@import "tokens";
+
 * {
-  scrollbar-color: var(--color-pop) var(--color-pop-light);
+  margin: 0;
+  padding: 0;
+  font: inherit;
+
+  scrollbar-color: var(--color-pop-dark) var(--color-pop-light);
   scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem;
+
+    &-thumb {
+      background: var(--color-pop-dark);
+    }
+
+    &-track {
+      background: var(--color-pop-light);
+    }
+  }
 
   &,
   &::before,
   &::after {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
   }
 }
+
 body {
   background-color: var(--color-background);
-
   color: var(--color-text);
   line-height: 1.5;
 }
+
 h2 {
   text-align: center;
   font-family: var(--ff-hero);
   font-weight: normal;
   font-size: 3rem;
-  * > & {
-    margin-top: 5rem;
+
+  *>& {
+    margin-top: var(--size-9);
   }
 }
+
 a {
   color: var(--color-pop);
 }
+
+p+p {
+  margin-top: var(--size-5);
+}
+
 img {
   display: block;
 
   max-width: 100%;
   border: 1px solid var(--color-text);
-}
-img:not([alt]),
-img[alt=""] {
-  filter: grayscale(100%);
+
+  &:not([alt]) {
+    filter: grayscale(100%);
+  }
 }
 
-@import "tokens";
+.border-0 {
+  border: 0;
+}
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.padding-5 {
+  padding: var(--size-rel-5, 1em);
+}
+
+.ff-brand {
+  font-family: var(--ff-hero);
+}
+
+.ff-decor {
+  font-family: var(--ff-script);
+}
+
+.bg-gradient {
+  background-image: linear-gradient(to bottom,
+      var(--color-pop),
+      var(--color-pop-light),
+      var(--color-white));
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 40rem) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &>* {
+    flex: 1;
+  }
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.fs-1 {
+  font-size: var(--size-1);
+}
+
+.fs-2 {
+  font-size: var(--size-2);
+}
+
+.fs-3 {
+  font-size: var(--size-3);
+}
+
+.fs-4 {
+  font-size: var(--size-4);
+}
+
+.fs-5 {
+  font-size: var(--size-5);
+}
+
+.fs-6 {
+  font-size: var(--size-6);
+}
+
+.fs-7 {
+  font-size: var(--size-7);
+}
+
+.fs-8 {
+  font-size: var(--size-8);
+}
+
+.fs-9 {
+  font-size: var(--size-9);
+}
+
 @import "curl";
 @import "buttons";
 @import "cards";
+@import "snap";
 
 @import "header";
 @import "hero";
-@import "testimonials";
+// @import "testimonials";
 @import "contact";
 @import "about";
-@import "footer";
-::-webkit-scrollbar {
-  height: 0.5rem;
-  width: 0.5rem;
-  background: var(--color-pop-light);
-
-  &-button {
-    background: var(--color-pop-xdark);
-    border: 1px solid var(--color-white);
-    color: var(--color-white);
-  }
-  &-thumb {
-    background: var(--color-pop-xdark);
-  }
-  &-track {
-    background: var(--color-pop-light);
-  }
-  &-track-piece {
-    background: var(--color-pop-light);
-    border: 1px solid var(--color-pop-xdark);
-  }
-  &-corner {
-    background: var(--color-pop);
-  }
-}
-::-webkit-resizer {
-  background: var(--color-pop);
-}
+// @import "footer";

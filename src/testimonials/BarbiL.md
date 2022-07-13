@@ -1,5 +1,6 @@
 ---
-name: Josh S.
+name: Barbi L.
 img: images/birthday-lolsurprise.jpg
-quote: "Being presented with this cake really made my daughter's fourth birthday."
+quote: "Thank you for the absolutely perfect cake and cupcakes. They were not only beautiful but they were just what Sareena wanted. Most of all they tasted phenomenal."
 ---
+bird

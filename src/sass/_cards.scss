@@ -1,61 +1,51 @@
-.cards,
-#cards {
+.cards {
+  --_spacer: var(--spacer, var(--size-5, 1rem));
   display: flex;
   flex-wrap: nowrap;
-  gap: 1rem;
+  gap: var(--_spacer);
 
-  margin: 1rem auto 0;
-  padding: 1rem;
+  margin: var(--_spacer) auto 0;
+  padding: var(--_spacer);
 
   overflow: auto;
-
-  @media (min-width: 40rem) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 60rem) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
+
 .card {
-  @extend .curl;
   flex: 1;
-  gap: 1rem;
 
   min-width: 15rem;
   max-width: 30rem;
-  margin: 1rem auto;
-  padding: 1rem;
+  margin: var(--_spacer) auto 0;
+  padding: var(--_spacer);
   border: 1px solid var(--color-pop);
-  border-radius: 1rem;
+  border-radius: var(--bdr-rds);
   background: var(--color-pop-light);
-  // background-image: linear-gradient( to bottom, var(--color-pop-light), var(--color-pop));
 
-  h2 {
-    grid-area: h2;
-
-    text-align: center;
-    font: clamp(2em, 10vw, 3em) var(--ff-card-title);
-    @media (min-width: 40rem) {
-      font-size: clamp(2em, 4vw, 3em);
-    }
-  }
-  p {
-    grid-area: p;
-  }
   img {
-    grid-area: img;
-    align-self: center;
-    justify-self: center;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 
-    border-radius: 1rem;
+    border-radius: var(--bdr-rds, 1rem);
     box-shadow: 1em 1em 1em rgba(0, 0, 0, 15%);
     transition: transform 300ms ease-in-out;
-    // &:hover { transform: scale(1.5); }
+
+    +img {
+      display: none;
+    }
   }
+
   * {
     margin: 0;
   }
-  * + * {
-    margin-top: 1em;
+
+  *+* {
+    margin-top: var(--size-5, 1rem);
   }
 }
+
+// .card:hover img {
+//   aspect-ratio: auto;
+// }
+// .card:hover img + img {
+//   display: block;
+// }
