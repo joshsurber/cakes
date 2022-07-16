@@ -1,0 +1,22 @@
+---
+layout: "base"
+---
+
+<div class="gallery | flex snap | padding-5 width-100">
+  {% for src in images %}
+  <img src="/images/{{ src }}" alt="{{ description }}" />
+  {% endfor %}
+</div>
+
+<div class="flex">
+  <div class="description | flex-2 | fs-8 ff-decor padding-5">
+    {{ content }}
+  </div>
+  {% if quote %}
+  <blockquote class="quote">
+    {{ quote }} {% if client %}
+    <cite>{{ client }}</cite>
+    {% endif %}
+  </blockquote>
+  {% endif %}
+</div>

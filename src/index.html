@@ -4,88 +4,49 @@ layout: base
 heroImg: "/images/hero-img.png"
 ---
 
-<div id="hero" class="hero | flex bg-gradient padding-5">
+<div id="hero" class="hero | flex">
   <div>
-    <img
-      src="{{ heroImg }}"
-      alt="A beautiful cake"
-      class="border-0 margin-0-auto"
-    />
+    <img src="{{ heroImg }}" alt="A beautiful cake" class="border-0" />
   </div>
-  <div>
-    <p class="hero-text | ff-brand text-center">{{ settings.site.tagline }}</p>
-    <p class="text-center">
-      <a href="#order" class="button">Request a quote</a>
+  <div class="flex-center">
+    <p class="ff-brand">{{ settings.site.tagline }}</p>
+    <p>
+      <a href="#contact" class="button">Request a quote</a>
     </p>
   </div>
 </div>
 
-<h2>What I've made...</h2>
-<section id="cakes" class="cards | snap">
-  {% for cake in collections.cakes %}
-  <div class="card">
-    <p>{{ cake.data.description }}</p>
-    {% for src in cake.data.images %}
-    <img src="/images/{{ src  }}" alt="{{ cake.data.alt }}" />
+<section id="cakes">
+  <h2>What I've made...</h2>
+  <div class="cards | flex snap">
+    {% for cake in collections.cakes reversed %}
+    <div class="card | flow">
+      <p><a href="{{ cake.url }}">{{ cake.data.description }}</a></p>
+      {% for src in cake.data.images limit:1 %}
+      <p>
+        <a href="{{ cake.url }}"
+          ><img
+            src="/images/{{ src  }}"
+            alt="{{ cake.data.description }}"
+            class="cakeimg"
+            loading="lazy"
+        /></a>
+      </p>
+      {% endfor %}
+    </div>
     {% endfor %}
-    <div style="opacity: 0.5">{{ cake.templateContent }}</div>
   </div>
-  {% endfor %}
 </section>
 
-<h2>What people are saying...</h2>
-<section id="testimonials" class="cards | snap">
-  {% for review in collections.testimonials %}
-  <blockquote class="card">
-    {% if review.data.img %}
-    <!-- <img src="{{ review.data.img }}" alt="" loading="lazy" /> -->
-    {% endif %}
-    <p>{{ review.data.quote }}</p>
-    <footer>
-      <cite>{{ review.data.name }}</cite>
-    </footer>
-  </blockquote>
-  {% endfor %}
-</section>
-
-<section id="contact" class="contact | flex curl | bg-gradient align-center">
-  <p>
-    Contact me about an order at:<br />
-    {{ settings.phone }}<br />
-    <a href="tel:{{ settings.phone | digits }}" class="button">Call now</a>
-  </p>
-
-  <div class="ff-decor fs-9 text-center">Or</div>
-
-  <form
-    action="/emailsuccess"
-    name="contact"
-    id="order"
-    netlify
-    netlify-honeypot="website"
-    class="flex-2 width-100"
-  >
-    <input type="hidden" name="subject" value="Cake inquiry" />
-
-    <label for="name"> Name </label>
-    <input type="text" name="name" id="name" required />
-
-    <label for="email"> Email </label>
-    <input type="email" name="email" id="email" required />
-
-    <label for="phone"> Phone</label>
-    <input type="tel" name="phone" id="phone" required />
-
-    <label for="message"> What do you need? </label>
-    <textarea name="message" id="message" required>
-Briefly describe the cake of your dreams. Flavor, size, shape, decoration style, how many people you are serving.</textarea
-    >
-
-    <label for="website"> Leave this blank </label>
-    <input type="text" name="website" id="website" />
-
-    <label for="date"> When do you need it? </label>
-    <input type="date" name="date" id="date" />
-    <button type="submit" id="submit" class="button">Send message</button>
-  </form>
+<section id="testimonials">
+  <h2>What people are saying...</h2>
+  <div class="cards | flex snap">
+    {% for cake in collections.cakes reversed %} {% if cake.data.quote %}{%
+    unless cake.data.hideQuote %}
+    <blockquote class="card | flow">
+      <p>{{ cake.data.quote }}</p>
+      <cite>{{ cake.data.client }}</cite>
+    </blockquote>
+    {% endunless %} {% endif %} {% endfor %}
+  </div>
 </section>

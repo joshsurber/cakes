@@ -1,7 +1,5 @@
 _site/
 .sass-cache/
-*.css
-*.css.map
 /package-lock.json
 /node_modules/
 public
