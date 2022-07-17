@@ -158,6 +158,7 @@ cite {
   flex: 1;
 }
 .flex-center {
+  align-items: center;
   align-self: center;
 }
 .flex-2 {
@@ -327,6 +328,10 @@ cite {
   color: var(--color-brand-light);
   font-size: var(--size-6);
 }
+.mainnav a:hover {
+  color: var(--color-brand);
+  text-shadow: 0 0 var(--size-2) var(--color-brand-light);
+}
 .wrap {
   background-image: var(--bg-gradient);
 }
@@ -399,6 +404,7 @@ cite {
 
   .mainnav {
     position: sticky;
+    max-width: 40em;
     top: 0em;
     right: 0;
     margin-top: -6rem;

@@ -1,8 +1,9 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/sass/");
   eleventyConfig.addPassthroughCopy("./src/images/");
-  eleventyConfig.addPassthroughCopy("./src/js/");
+  // eleventyConfig.addPassthroughCopy("./src/js/");
   eleventyConfig.addPassthroughCopy({ "./src/*.css": "css" });
+  eleventyConfig.addPassthroughCopy({ "./src/*.js": "js" });
 
   eleventyConfig.addFilter("digits", function (value) {
     return value.replaceAll(/\D/g, "");
@@ -18,7 +19,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "public",
+      // output: "public",
     },
   };
 };
