@@ -1,0 +1,9 @@
+<blockquote>
+  {% if review.data.img %}
+  <!-- <img src="{{ review.data.img }}" alt="" loading="lazy" /> -->
+  {% endif %}
+  <p>{{ review.data.quote }}</p>
+  <footer>
+    <cite>{{ review.data.name }}</cite>
+  </footer>
+</blockquote>

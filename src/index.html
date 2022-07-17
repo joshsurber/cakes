@@ -1,0 +1,52 @@
+---
+layout: base
+
+heroImg: "/images/hero-img.png"
+---
+
+<div id="hero" class="hero | flex">
+  <div>
+    <img src="{{ heroImg }}" alt="A beautiful cake" class="border-0" />
+  </div>
+  <div class="flex-center">
+    <p class="ff-brand">It's not a celebration until there is cake</p>
+    <p>
+      <a href="#contact" class="button">Request a quote</a>
+    </p>
+  </div>
+</div>
+
+<section id="cakes">
+  <h2>What I've made...</h2>
+  <div class="cards | flex snap">
+    {% for cake in collections.cakes reversed %}
+    <div class="card | flow">
+      <p><a href="{{ cake.url }}">{{ cake.data.description }}</a></p>
+      {% for src in cake.data.images limit:1 %}
+      <p>
+        <a href="{{ cake.url }}"
+          ><img
+            src="/images/{{ src  }}"
+            alt="{{ cake.data.description }}"
+            class="cakeimg"
+            loading="lazy"
+        /></a>
+      </p>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>What people are saying...</h2>
+  <div class="cards | flex snap">
+    {% for cake in collections.cakes reversed %} {% if cake.data.quote %}{%
+    unless cake.data.hideQuote %}
+    <blockquote class="card | flow">
+      <p>{{ cake.data.quote }}</p>
+      <cite>{{ cake.data.client }}</cite>
+    </blockquote>
+    {% endunless %} {% endif %} {% endfor %}
+  </div>
+</section>
