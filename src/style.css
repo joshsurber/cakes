@@ -133,10 +133,88 @@ cite {
 
 /* Components */
 
+.wrap {
+  background-image: var(--bg-gradient);
+}
+.hero {
+  --spacer: var(--size-9);
+  /* gap: var(--size-9); */
+  /* padding: var(--size-5); */
+  font-size: clamp(3rem, 6vw + 1rem, 5rem);
+  line-height: 1.1;
+  text-align: center;
+  font-family: var(--ff-brand);
+}
+
 .gallery img {
   max-height: 80vh;
   object-fit: scale-down;
   flex-grow: 0;
+  margin-inline: auto;
+}
+
+.logo {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.logo h1 {
+  margin-bottom: -1rem;
+}
+.logo svg,
+.logo img {
+  height: clamp(5rem, 50vw + 1rem, 20rem);
+  margin-inline: auto;
+}
+
+.mainnav {
+}
+.mainnav li {
+  flex-basis: auto;
+  list-style-type: none;
+  text-align: center;
+}
+.mainnav a {
+  color: var(--color-brand-light);
+  font-size: var(--size-6);
+}
+.mainnav a:hover {
+  color: var(--color-brand);
+  text-shadow: 0 0 var(--size-2) var(--color-brand-light);
+}
+
+.contact {
+  margin: var(--size-9) 0 3rem;
+  padding: 2rem 1rem;
+  background-image: var(--bg-gradient);
+  font-size: 1.5rem;
+  text-align: center;
+}
+.contactform {
+  display: grid;
+  gap: var(--size-3);
+  grid-template-columns: auto 1fr;
+  font-size: var(--size-5);
+}
+.contactform label {
+  text-align: right;
+}
+.contactform input,
+.contactform textarea {
+  background: var(--color-brand-light);
+  color: var(--color-brand-xdark);
+  border-width: var(--size-1);
+  border-radius: var(--bdr-rds);
+  padding-inline: var(--size-3);
+}
+.contactform textarea {
+  resize: vertical;
+  height: 6em;
+}
+
+.about {
+  margin-top: var(--size-9);
+  max-width: 80rem;
   margin-inline: auto;
 }
 
@@ -149,7 +227,6 @@ cite {
   padding: var(--_spacer);
   gap: var(--_spacer);
 }
-
 .flex.snap {
   flex-direction: row;
   align-items: flex-start;
@@ -170,14 +247,16 @@ cite {
 .align-center {
   align-items: center;
 }
-.bg-black {
-  background-color: var(--color-black);
-}
+
 .border-0 {
   border: 0;
 }
 .flow > * + * {
   margin-top: var(--size-5);
+}
+
+.bg-black {
+  background-color: var(--color-black);
 }
 .ff-brand {
   font-family: var(--ff-brand);
@@ -215,30 +294,6 @@ cite {
 
 /* Blocks */
 
-.curl {
-  --_rotate: var(--curliness, 3deg);
-  --_thickness: var(--thickness, 1rem);
-  --_opacity: var(--opacity, 30%);
-  position: relative;
-}
-.curl::before,
-.curl::after {
-  position: absolute;
-  content: "";
-  inset: calc(100% - var(--_thickness)) var(--_thickness) 1px;
-  box-shadow: 0 var(--_thickness) var(--_thickness)
-    rgba(0, 0, 0, var(--_opacity));
-  background: rebeccapurple;
-  z-index: -1;
-}
-.curl::before {
-  transform: rotate(var(--_rotate));
-  transform-origin: bottom right;
-}
-.curl::after {
-  transform: rotate(calc(0deg - var(--_rotate)));
-  transform-origin: bottom left;
-}
 .button {
   display: block;
 
@@ -272,6 +327,7 @@ cite {
   background-position: 100%;
   color: var(--color-brand-2);
 }
+
 .card {
   min-width: 20rem;
   max-width: 60vw;
@@ -288,12 +344,32 @@ cite {
   box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.15);
   transition: transform 300ms ease-in-out;
 }
-.card * {
-  margin: 0;
+
+.curl {
+  --_rotate: var(--curliness, 3deg);
+  --_thickness: var(--thickness, 1rem);
+  --_opacity: var(--opacity, 30%);
+  position: relative;
 }
-.card * + * {
-  margin-top: var(--size-5, 1rem);
+.curl::before,
+.curl::after {
+  position: absolute;
+  content: "";
+  inset: calc(100% - var(--_thickness)) var(--_thickness) 1px;
+  box-shadow: 0 var(--_thickness) var(--_thickness)
+    rgba(0, 0, 0, var(--_opacity));
+  background: rebeccapurple;
+  z-index: -1;
 }
+.curl::before {
+  transform: rotate(var(--_rotate));
+  transform-origin: bottom right;
+}
+.curl::after {
+  transform: rotate(calc(0deg - var(--_rotate)));
+  transform-origin: bottom left;
+}
+
 .snap {
   --_spacer: var(--spacer, var(--size-5, 1rem));
   overflow: auto;
@@ -303,80 +379,7 @@ cite {
 .snap > * {
   scroll-snap-align: start;
 }
-.logo {
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-.logo h1 {
-  margin-bottom: -1rem;
-}
-.logo svg,
-.logo img {
-  height: clamp(5rem, 50vw + 1rem, 20rem);
-  margin-inline: auto;
-}
 
-.mainnav {
-}
-.mainnav li {
-  flex-basis: auto;
-  list-style-type: none;
-  text-align: center;
-}
-.mainnav a {
-  color: var(--color-brand-light);
-  font-size: var(--size-6);
-}
-.mainnav a:hover {
-  color: var(--color-brand);
-  text-shadow: 0 0 var(--size-2) var(--color-brand-light);
-}
-.wrap {
-  background-image: var(--bg-gradient);
-}
-.hero {
-  --spacer: var(--size-9);
-  /* gap: var(--size-9); */
-  /* padding: var(--size-5); */
-  font-size: clamp(3rem, 6vw + 1rem, 5rem);
-  line-height: 1.1;
-  text-align: center;
-  font-family: var(--ff-brand);
-}
-.contact {
-  margin: var(--size-9) 0 3rem;
-  padding: 2rem 1rem;
-  background-image: var(--bg-gradient);
-  font-size: 1.5rem;
-  text-align: center;
-}
-.contactform {
-  display: grid;
-  gap: var(--size-3);
-  grid-template-columns: auto 1fr;
-  font-size: var(--size-5);
-}
-.contactform label {
-  text-align: right;
-}
-.contactform input,
-.contactform textarea {
-  background: var(--color-brand-light);
-  color: var(--color-brand-xdark);
-  border-width: var(--size-1);
-  border-radius: var(--bdr-rds);
-  padding-inline: var(--size-3);
-}
-.contactform textarea {
-  resize: vertical;
-  height: 6em;
-}
-.about {
-  margin-top: var(--size-9);
-  max-width: 80rem;
-  margin-inline: auto;
-}
 .cols {
   --_gap: var(--gap, var(--size-5, 1rem));
   gap: var(--_gap);
@@ -387,6 +390,12 @@ cite {
 }
 .cols img {
   break-after: column;
+}
+
+/* Exceptions */
+
+[data-hide] {
+  display: none;
 }
 @media (min-width: 50rem) {
   .wrap {
@@ -408,7 +417,7 @@ cite {
     top: 0em;
     right: 0;
     margin-top: -6rem;
-    margin-left: 20em;
+    margin-left: auto;
     border-bottom-left-radius: 1em;
     z-index: 2;
   }
@@ -422,13 +431,4 @@ cite {
     flex-direction: row;
     /* align-items: flex-start; */
   }
-}
-
-/* Exceptions */
-
-[data-hide] {
-  display: none;
-}
-.grad {
-  /* background-image: var(--bg-gradient); */
 }
