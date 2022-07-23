@@ -1,25 +1,22 @@
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/sass/");
-  eleventyConfig.addPassthroughCopy("./src/images/");
-  // eleventyConfig.addPassthroughCopy("./src/js/");
-  eleventyConfig.addPassthroughCopy({ "./src/*.css": "css" });
-  eleventyConfig.addPassthroughCopy({ "./src/*.js": "js" });
+  eleventyConfig.addPassthroughCopy("./images/");
+  eleventyConfig.addPassthroughCopy({ "./*.css": "css" });
+  eleventyConfig.addPassthroughCopy({ "./*.js": "js" });
 
-  eleventyConfig.addFilter("digits", function (value) {
-    return value.replaceAll(/\D/g, "");
-  });
+  // I used this when I had the phone number in a variable.
+  // No point since I doubt it'll change often
+  // eleventyConfig.addFilter("digits", function (value) {
+  //   return value.replaceAll(/\D/g, "");
+  // });
 
   eleventyConfig.setBrowserSyncConfig({
     ui: { port: 8081 },
     // ghostMode: { clicks: true, forms: true, scroll: true, location: true, },
     open: "external",
-    reloadOnRestart: true,
+    // reloadOnRestart: true,
   });
 
-  return {
-    dir: {
-      input: "src",
-      // output: "public",
-    },
-  };
+  // I started using non-default directories but why not just use 11ty as designed?
+  // Keeping this here in case I find reason to change my mind...
+  // return { dir: { input: "src", output: "public", }, };
 };
