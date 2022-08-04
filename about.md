@@ -57,4 +57,4 @@ Tina Orosco
 
 [1st Corinthians 10:31](https://www.biblegateway.com/passage/?version=KJV&search=1Cor10.31)
 
-[Psalms 106.1](https://www.biblegateway.com/passage/?version=KJV&search=Psa106.1)
+[Psalms 106:1](https://www.biblegateway.com/passage/?version=KJV&search=Psa106.1)
