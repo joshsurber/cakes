@@ -54,3 +54,5 @@ Tina Orosco
 [John 3:16](https://www.biblegateway.com/passage/?version=KJV&search=John+3%3A16)
 
 [Philippians 4:13](https://www.biblegateway.com/passage/?version=KJV&search=Phil+4%3A13)
+
+[1st Corinthians 10:31](https://www.biblegateway.com/passage/?version=KJV&search=1Cor+10%3A31)

@@ -11,24 +11,25 @@ collections:
       create: true
       fields:
           - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Title", name: "title", widget: "text" }
           - {
                 label: "Short description",
                 name: "description",
                 widget: "string",
-                hint:"The short blurb that will appear on the home page",
+                hint: "The short blurb that will appear on the home page",
             }
           - {
                 label: "Longer description",
                 name: "body",
                 widget: "text",
-                hint:"Longer text that appears on the individual cake page",
+                hint: "Longer text that appears on the individual cake page",
             }
           - {
                 label: "Images",
                 name: "images",
                 widget: "list",
-                allow_add:true,
-                collapsed:false,
+                allow_add: true,
+                collapsed: false,
                 min: 1,
                 field: { label: Image, name: image, widget: image },
             }
@@ -37,7 +38,7 @@ collections:
                 name: "client",
                 widget: "string",
                 required: false,
-                hint:'First name and last initial',
+                hint: "First name and last initial",
             }
           - {
                 label: "Testimonial",
