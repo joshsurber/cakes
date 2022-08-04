@@ -2,6 +2,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./images/");
   eleventyConfig.addPassthroughCopy({ "./*.css": "css" });
   eleventyConfig.addPassthroughCopy({ "./*.js": "js" });
+  eleventyConfig.addPassthroughCopy("./admin/config.yml");
 
   // I used this when I had the phone number in a variable.
   // No point since I doubt it'll change often
