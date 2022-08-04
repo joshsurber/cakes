@@ -1,5 +1,5 @@
 ---
-date: 2022-07-28T20:29:18.608Z
+date: 2022-07-28
 description: Funfetti Gym themed cupcakes
 images:
   - gym1.jpg
