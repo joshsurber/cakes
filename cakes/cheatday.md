@@ -2,8 +2,8 @@
 date: 2022-07-28T20:29:18.608Z
 description: Funfetti Gym themed cupcakes
 images:
-  - messages_0.jpeg
-  - messages_0-1-.jpeg
+  - gym1.jpg
+  - gym2.jpg
 client: Cindy P
 quote: "TINA! Ladies loved the cupcakes!!! Again thank you for helping me make my friend’s birthday extra special! "
 ---
