@@ -4,8 +4,8 @@ images:
   - dog1.jpg
   - dog2.jpg
   - dog3.jpg
-alt: "A shaggy dog cake"
-description: "A dog cake"
+alt: "Sculpted dog cake"
+description: "Sculpted dog cake"
 ---
 
-A dog cake
+Sculpted dog cake
