@@ -257,6 +257,19 @@ main {
 .bg-black {
   background-color: var(--color-black);
 }
+.text-black {
+  color: var(--color-black);
+}
+@media (min-width: 50em) {
+  .page img {
+    max-width: 30%;
+    float: left;
+    margin: var(--size-5);
+  }
+  .page img[alt*="husband"] {
+    float: right;
+  }
+}
 .ff-brand {
   font-family: var(--ff-brand);
 }
@@ -375,17 +388,6 @@ main {
 .snap > * {
   scroll-snap-align: start;
 }
-.cols {
-  --_gap: var(--gap, var(--size-5, 1rem));
-  gap: var(--_gap);
-  padding-inline: var(--_gap);
-}
-.cols p {
-  break-inside: avoid;
-}
-.cols img {
-  break-after: column;
-} /* Exceptions */
 [data-hide] {
   display: none;
 }

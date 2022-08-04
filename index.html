@@ -21,7 +21,9 @@ heroImg: "/images/hero-img.png"
   <div class="cards | flex snap">
     {% for cake in collections.cakes reversed %}
     <div class="card | flow">
-      <p><a href="{{ cake.url }}">{{ cake.data.description }}</a></p>
+      <p>
+        <a href="{{ cake.url }}">{{ cake.data.description }}</a>
+      </p>
       {% for src in cake.data.images limit:1 %}
       <p>
         <a href="{{ cake.url }}"

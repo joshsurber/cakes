@@ -5,6 +5,8 @@ layout: page
 Hello! My name is Tina Orosco! Welcome to my site! Here is a little bit about
 me...
 
+![A picture of myself](/images/tina.jpg)
+
 I live in San Antonio, in the Great State of Texas. My husband Tony is an
 associate pastor at [Texas Baptist Church](http://tbcsanantonio.com), God has
 blessed us through the church with a [homeless
@@ -13,6 +15,8 @@ seen thousands come to Christ. I help to teach junior church and also help feed
 the homeless. We will be celebrating our ten year anniversary in November of 2022.
 We have nine children between us and eight beautiful grandchildren. God
 has been so good to us and has blessed our lives abundantly.
+
+![A picture of my husband and me](/images/tandt.jpg)
 
 My favorite place in my home is my kitchen, cooking. Baking has always been my
 way of unwinding. I have always had a passion for baking as far back as I can
