@@ -4,10 +4,6 @@
   "description": "Cakes by Tina, at <http://tntcakery.com>",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
-    "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass  --no-source-map src/sass:public/css",
-    "build:eleventy": "eleventy",
     "start": "eleventy --serve",
     "build": "eleventy"
   },
@@ -21,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/joshsurber/cakes/issues"
   },
-  "homepage": "https://github.com/joshsurber/cakes#readme",
+  "homepage": "https://tntcakery.com",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1"
   }

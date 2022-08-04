@@ -10,7 +10,8 @@ associate pastor at [Texas Baptist Church](http://tbcsanantonio.com), God has
 blessed us through the church with a [homeless
 ministry](https://www.tbcsanantonio.com/the-homless-ministry) where we have
 seen thousands come to Christ. I help to teach junior church and also help feed
-the homeless. We will be celebrating our ten year anniversary in November of 2022. We have nine children between us and eight beautiful grandchildren. God
+the homeless. We will be celebrating our ten year anniversary in November of 2022.
+We have nine children between us and eight beautiful grandchildren. God
 has been so good to us and has blessed our lives abundantly.
 
 My favorite place in my home is my kitchen, cooking. Baking has always been my
@@ -46,6 +47,6 @@ baked good needs!
 
 Tina Orosco
 
-[John 3:16](https://www.biblegateway.com/passage/?version=NRSVCE&search=John+3%3A16)
+[John 3:16](https://www.biblegateway.com/passage/?version=KJV&search=John+3%3A16)
 
-[Philippians 4:13](https://www.biblegateway.com/passage/?version=NRSVCE&search=Phil+4%3A13)
+[Philippians 4:13](https://www.biblegateway.com/passage/?version=KJV&search=Phil+4%3A13)
