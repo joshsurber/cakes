@@ -75,5 +75,16 @@ Briefly describe the cake of your dreams. Flavor, size, shape, decoration style,
       <p>&copy;2022 Tina Orosco, TnT Cakery</p>
       <!-- Design and code by Josh Surber, http://surber.us -->
     </footer>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
