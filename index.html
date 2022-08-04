@@ -17,7 +17,7 @@ heroImg: "/images/hero-img.png"
 </div>
 
 <section id="cakes">
-  <h2>What I've made...</h2>
+  <h2>My creations</h2>
   <div class="cards | flex snap">
     {% for cake in collections.cakes reversed %}
     <div class="card | flow">
@@ -42,7 +42,7 @@ heroImg: "/images/hero-img.png"
 </section>
 
 <section id="testimonials">
-  <h2>What people are saying...</h2>
+  <h2>Testimonials</h2>
   <div class="cards | flex snap">
     {% for cake in collections.cakes reversed %} {% if cake.data.quote %}{%
     unless cake.data.hideQuote %}
