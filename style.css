@@ -107,6 +107,7 @@ blockquote {
   border-width: var(--size-1);
   border-left-width: var(--size-3);
   border-radius: var(--size-5);
+  clear: both;
   padding: var(--size-5);
   padding-left: var(--size-7);
   position: relative;

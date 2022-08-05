@@ -16,6 +16,9 @@ the homeless. We will be celebrating our ten year anniversary in November of 202
 We have nine children between us and eight beautiful grandchildren. God
 has been so good to us and has blessed our lives abundantly.
 
+> For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.
+> [John 3:16](https://www.biblegateway.com/passage/?version=KJV&search=John3.16)
+
 ![A picture of my husband and me](/images/tandt.jpg)
 
 My favorite place in my home is my kitchen, cooking. Baking has always been my
@@ -51,10 +54,9 @@ baked good needs!
 
 Tina Orosco
 
-[John 3:16](https://www.biblegateway.com/passage/?version=KJV&search=John3.16)
+> Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God.
+> [1st Corinthians 10:31](https://www.biblegateway.com/passage/?version=KJV&search=1Cor10.31)
 
 [Philippians 4:13](https://www.biblegateway.com/passage/?version=KJV&search=Phil4.13)
-
-[1st Corinthians 10:31](https://www.biblegateway.com/passage/?version=KJV&search=1Cor10.31)
 
 [Psalms 106:1](https://www.biblegateway.com/passage/?version=KJV&search=Psa106.1)
